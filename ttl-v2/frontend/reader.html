@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Secure Reader — Trafinmarket</title>
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-user-select:none!important;user-select:none!important;-moz-user-select:none!important}
+html,body{height:100%;background:#FFFFFF;color:#0A0A0A;font-family:Inter,sans-serif;overflow:hidden}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:#1D4ED8;border-radius:2px}
+@media print{body{display:none!important}}
+.rtop{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(241,245,249,.97);border-bottom:1px solid rgba(29,78,216,.15);display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:1000;backdrop-filter:blur(16px);gap:12px}
+.rlogo{font-family:"Cormorant Garamond",serif;font-size:16px;color:#1D4ED8;letter-spacing:.2em;text-transform:uppercase;flex-shrink:0}
+.rtitle{font-size:12px;color:rgba(15,23,42,.65);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;flex:1}
+.rctrl{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.cb{background:rgba(29,78,216,.08);border:1px solid rgba(29,78,216,.18);color:#1D4ED8;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:8px;font-size:14px;transition:all .2s;font-family:Inter,sans-serif;flex-shrink:0}
+.cb:hover{background:rgba(29,78,216,.2)}
+.cb:disabled{opacity:.3;cursor:not-allowed}
+.pind{font-size:11px;color:rgba(240,237,230,.45);letter-spacing:.12em;min-width:64px;text-align:center}
+.zv{font-size:11px;color:#1D4ED8;min-width:40px;text-align:center}
+.xbtn{background:transparent;border:1px solid rgba(29,78,216,.2);color:rgba(240,237,230,.5);padding:6px 14px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border-radius:6px;font-family:Inter,sans-serif;transition:all .3s;white-space:nowrap}
+.xbtn:hover{border-color:rgba(29,78,216,.5);color:#1D4ED8}
+.prog{position:fixed;top:56px;left:0;right:0;height:2px;background:rgba(29,78,216,.08);z-index:999}
+.prog-f{height:100%;background:linear-gradient(to right,#1D4ED8,#3B82F6);transition:width .3s;width:0}
+.rside{position:fixed;top:56px;left:0;bottom:0;width:200px;background:rgba(241,245,249,.95);border-right:1px solid rgba(29,78,216,.1);overflow-y:auto;z-index:900;padding:12px 0;transform:translateX(-200px);transition:transform .3s}
+.rside.open{transform:translateX(0)}
+.ss{padding:6px 14px 4px;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:rgba(29,78,216,.4);margin-top:6px}
+.si{display:flex;align-items:center;gap:8px;padding:8px 14px;font-size:11px;color:rgba(240,237,230,.45);cursor:pointer;transition:all .2s;border-left:2px solid transparent}
+.si:hover{color:#0A0A0A;background:rgba(29,78,216,.04)}
+.si.act{color:#1D4ED8;border-left-color:#1D4ED8;background:rgba(29,78,216,.06)}
+.th{width:26px;height:34px;background:#141D30;border:1px solid rgba(29,78,216,.1);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:8px;color:rgba(29,78,216,.4);border-radius:2px;overflow:hidden}
+.rmain{position:fixed;top:58px;left:0;right:0;bottom:48px;overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column;align-items:center;padding:24px 16px 24px;transition:left .3s}
+.rmain.sw{left:200px}
+.pwrap{position:relative;margin-bottom:14px;box-shadow:0 8px 40px rgba(16,24,40,.16);max-width:100%}
+.pcanvas{display:block;max-width:100%;border-radius:3px;pointer-events:none}
+.pover{position:absolute;inset:0;z-index:10;cursor:default;background:transparent}
+.wm{position:absolute;inset:0;z-index:11;pointer-events:none;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.wmt{font-size:12px;font-weight:300;color:rgba(29,78,216,.07);letter-spacing:.12em;text-transform:uppercase;transform:rotate(-35deg);position:absolute;width:220%;text-align:center;line-height:4.5}
+.rbot{position:fixed;bottom:0;left:0;right:0;height:48px;background:rgba(241,245,249,.97);border-top:1px solid rgba(29,78,216,.1);display:flex;align-items:center;justify-content:center;gap:10px;z-index:1000;backdrop-filter:blur(16px)}
+.exp{font-size:10px;color:rgba(29,78,216,.45);letter-spacing:.12em;text-transform:uppercase;margin-left:16px}
+.sec-note{font-size:10px;color:rgba(240,237,230,.18);letter-spacing:.1em;text-transform:uppercase;margin-right:16px}
+.load{position:fixed;inset:0;background:#FFFFFF;z-index:9000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:40px}
+.llogo{font-family:"Cormorant Garamond",serif;font-size:20px;color:#1D4ED8;letter-spacing:.25em;text-transform:uppercase;margin-bottom:6px}
+.lring{width:40px;height:40px;border:2px solid rgba(29,78,216,.15);border-top-color:#1D4ED8;border-radius:50%;animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ltxt{font-size:11px;color:rgba(240,237,230,.4);letter-spacing:.2em;text-transform:uppercase}
+.lprog{width:180px;height:2px;background:rgba(29,78,216,.1);border-radius:1px;overflow:hidden;margin-top:6px}
+.lpf{height:100%;background:#1D4ED8;border-radius:1px;transition:width .4s;width:0}
+.denied{position:fixed;inset:0;background:#FFFFFF;z-index:9000;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:40px}
+.di{font-size:50px;margin-bottom:6px}
+.dt{font-family:"Cormorant Garamond",serif;font-size:34px;color:#E63946}
+.ds{font-size:13px;color:rgba(240,237,230,.5);line-height:1.9;max-width:480px}
+.db{background:linear-gradient(135deg,#1D4ED8,#3B82F6);color:#FFFFFF;padding:14px 30px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;border-radius:8px;font-family:Inter,sans-serif;margin-top:6px}
+.stgl{display:none;background:rgba(29,78,216,.08);border:1px solid rgba(29,78,216,.18);color:#1D4ED8;width:32px;height:32px;align-items:center;justify-content:center;cursor:pointer;border-radius:8px;font-size:15px}
+@media(max-width:768px){.stgl{display:flex}.rtitle{display:none}.rmain{padding:16px 8px 16px}}
+</style>
+  <!-- Google Analytics GA4 — replace G-XXXXXXXXXX with your Measurement ID -->
+  <!-- Get ID from: analytics.google.com → Admin → Data Streams → your stream -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+    // Track PDF purchase events
+    window.trackPurchase = function(productName, price) {
+      gtag('event', 'purchase', { item_name: productName, value: price/100, currency: 'INR' });
+    };
+    // Track PDF read events
+    window.trackRead = function(productName) {
+      gtag('event', 'read_pdf', { item_name: productName });
+    };
+  </script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#F59E0B">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Trafinmarket">
+</head>
+<body>
+
+<div class="load" id="ls">
+  <div class="llogo">Trafinmarket</div>
+  <div class="lring"></div>
+  <div class="ltxt" id="lt">Verifying access...</div>
+  <div class="lprog"><div class="lpf" id="lf"></div></div>
+</div>
+
+<div class="denied" id="ds">
+  <div class="di">&#128274;</div>
+  <div class="dt">Access Required</div>
+  <div class="ds" id="dm">You do not have active access to this PDF.</div>
+  <button class="db" onclick="location.href='/'">Return to Library</button>
+</div>
+
+<div id="rui" style="display:none">
+  <div class="rtop">
+    <div class="rlogo">TFM</div>
+    <div class="rtitle" id="rtitle">Loading...</div>
+    <div class="rctrl">
+      <button class="stgl" onclick="toggleSide()" id="stglBtn">&#9776;</button>
+      <button class="cb" onclick="prevP()" id="bprev" disabled>&#8592;</button>
+      <span class="pind" id="pi">- / -</span>
+      <button class="cb" onclick="nextP()" id="bnext" disabled>&#8594;</button>
+      <span class="zv" id="zv">100%</span>
+      <button class="cb" onclick="zOut()" title="Zoom out">&#8722;</button>
+      <button class="cb" onclick="zIn()" title="Zoom in">+</button>
+      <button class="cb" onclick="fitW()" title="Fit width">&#8596;</button>
+      <button class="xbtn" onclick="location.href='/'">&#8592; Library</button>
+    </div>
+  </div>
+  <div class="prog"><div class="prog-f" id="pf"></div></div>
+  <div class="rside" id="rside">
+    <div class="ss">Pages</div>
+    <div id="spages"></div>
+  </div>
+  <div class="rmain" id="rmain">
+    <div id="pc"></div>
+  </div>
+  <div class="rbot">
+    <button class="cb" onclick="prevP()" style="width:auto;padding:0 14px;font-size:11px">&#8592; Prev</button>
+    <button class="cb" onclick="nextP()" style="width:auto;padding:0 14px;font-size:11px">Next &#8594;</button>
+    <span class="exp" id="expInfo"></span>
+    <span class="sec-note">&#128274; Read-Only Secured</span>
+  </div>
+</div>
+
+<script>
+// ===== SECURITY LAYER =====
+document.addEventListener("contextmenu",e=>e.preventDefault());
+document.addEventListener("selectstart",e=>e.preventDefault());
+document.addEventListener("dragstart",e=>e.preventDefault());
+document.addEventListener("copy",e=>{e.preventDefault();e.clipboardData?.setData("text/plain","[Protected — Trafinmarket]");});
+document.addEventListener("keydown",e=>{
+  if((e.ctrlKey||e.metaKey)&&["p","s","u","a"].includes(e.key)){e.preventDefault();return false;}
+  if(e.key==="F12"||(e.ctrlKey&&e.shiftKey&&["I","J","C","K"].includes(e.key))){e.preventDefault();return false;}
+  if(e.key==="PrintScreen"){e.preventDefault();navigator.clipboard?.writeText("[Screenshot blocked — Trafinmarket]").catch(()=>{});return false;}
+});
+// DevTools blur
+let _dv=false;
+setInterval(()=>{
+  const big=window.outerWidth-window.innerWidth>160||window.outerHeight-window.innerHeight>160;
+  if(big&&!_dv){_dv=true;document.getElementById("rmain").style.filter="blur(24px)";showW("DevTools detected — content hidden for security.");}
+  else if(!big&&_dv){_dv=false;document.getElementById("rmain").style.filter="";hideW();}
+},900);
+function showW(m){let w=document.getElementById("sw");if(!w){w=document.createElement("div");w.id="sw";w.style.cssText="position:fixed;inset:0;background:rgba(241,245,249,.97);z-index:8000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:40px";w.innerHTML="<div style=\"font-size:48px\">&#128274;</div><div style=\"font-family:Cormorant Garamond,serif;font-size:28px;color:#E63946\">Security Alert</div><div style=\"font-size:13px;color:rgba(15,23,42,.65);max-width:400px;line-height:1.9\">"+m+"</div>";document.body.appendChild(w);}}
+function hideW(){const w=document.getElementById("sw");if(w)w.remove();}
+// Override getImageData to scramble for screen-capture extensions
+const _gid=CanvasRenderingContext2D.prototype.getImageData;
+CanvasRenderingContext2D.prototype.getImageData=function(sx,sy,sw,sh){
+  if(this._ok)return _gid.call(this,sx,sy,sw,sh);
+  const d=_gid.call(this,sx,sy,sw,sh);
+  for(let i=0;i<d.data.length;i+=4){d.data[i]=d.data[i+1]=d.data[i+2]=0;d.data[i+3]=255;}
+  return d;
+};
+
+// ===== PDF READER =====
+pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+const P=new URLSearchParams(location.search);
+const pid=P.get("id");
+// Read token from localStorage first, fall back to URL param (for backward compatibility)
+const tok=localStorage.getItem('tl_tok') || P.get("token") || null;
+let pdf=null,cur=1,total=0,sc=1.4,uname="",uemail="",sideOpen=false,rendered=new Set();
+
+function setL(t,p){document.getElementById("lt").textContent=t;document.getElementById("lf").style.width=p+"%";}
+function showD(m){document.getElementById("ls").style.display="none";const d=document.getElementById("ds");d.style.display="flex";if(m)document.getElementById("dm").textContent=m;}
+
+async function init(){
+  if(!pid){showD("Invalid reader link — no product ID found.");return;}
+  if(!tok){showD("Please sign in first to read this PDF.");
+    setTimeout(()=>window.location='/',2000);return;}
+  setL("Verifying identity...",20);
+  try{
+    const r=await fetch("/api/auth/me",{headers:{"Authorization":"Bearer "+tok}});
+    if(!r.ok)throw new Error("Session expired");
+    const d=await r.json();uname=d.user.name;uemail=d.user.email;
+  }catch(e){showD("Session expired. Please sign in again.");
+    setTimeout(()=>window.location='/',2000);return;}
+  setL("Checking access...",40);
+  try{
+    // Correct endpoint: GET /api/reader/:id (checks access + returns metadata)
+    const r=await fetch("/api/reader/"+pid+"/check",{headers:{"Authorization":"Bearer "+tok}});
+    const d=await r.json();
+    if(!r.ok||!d.hasAccess){showD(d.error||"No active access. Purchase this PDF from the library.");return;}
+    if(d.expiresAt){
+      const days=Math.ceil((new Date(d.expiresAt)-new Date())/864e5);
+      document.getElementById("expInfo").textContent="\u23F0 "+days+" day"+(days!==1?"s":"")+" remaining";
+    }
+  }catch{showD("Could not verify access. Check your connection.");return;}
+  setL("Loading document...",60);
+  try{
+    const r=await fetch("/api/reader/"+pid+"/info",{headers:{"Authorization":"Bearer "+tok}});
+    if(r.ok){const d=await r.json();
+      document.getElementById("rtitle").textContent=d.product?.title||"";
+      document.title=(d.product?.title||"PDF")+" — Trafinmarket";}
+  }catch{}
+  setL("Loading document...",78);
+  try{
+    // Backend now streams PDF directly — fetch as binary blob
+    const r=await fetch("/api/reader/"+pid,{headers:{"Authorization":"Bearer "+tok}});
+    if(!r.ok){
+      const e=await r.json().catch(()=>({}));
+      showD(e.error||"Cannot load document. Error "+r.status);
+      return;
+    }
+    const contentType = r.headers.get('content-type')||'';
+    setL("Rendering PDF...",88);
+    if(contentType.includes('application/pdf')){
+      // Direct binary stream
+      const buf=await r.arrayBuffer();
+      pdf=await pdfjsLib.getDocument({data:buf}).promise;
+    } else {
+      // JSON response with signedUrl (fallback)
+      const data=await r.json();
+      if(!data.signedUrl){showD("No PDF URL returned from server.");return;}
+      pdf=await pdfjsLib.getDocument({url:data.signedUrl,withCredentials:false}).promise;
+    }
+    total=pdf.numPages;
+  }catch(e){showD("Failed to load document: "+e.message);return;}
+  setL("Ready!",100);
+  setTimeout(()=>{document.getElementById("ls").style.display="none";document.getElementById("rui").style.display="block";go();},300);
+}
+
+function go(){
+  document.getElementById("bprev").disabled=false;document.getElementById("bnext").disabled=false;
+  buildSide();renderAll();upd();
+}
+
+async function renderAll(){
+  const con=document.getElementById("pc");con.innerHTML="";
+  for(let i=1;i<=total;i++){
+    const w=document.createElement("div");w.className="pwrap";w.id="pw"+i;
+    w.innerHTML="<canvas class=\"pcanvas\" id=\"pc"+i+"\"></canvas><div class=\"pover\"></div><div class=\"wm\"><div class=\"wmt\" id=\"wm"+i+"\"></div></div>";
+    con.appendChild(w);
+  }
+  for(let i=1;i<=total;i++)await rPage(i);
+}
+
+async function rPage(n){
+  if(rendered.has(n))return;rendered.add(n);
+  try{
+    const page=await pdf.getPage(n);
+    const vp=page.getViewport({scale:sc});
+    const cv=document.getElementById("pc"+n);
+    if(!cv)return;
+    cv.width=vp.width;cv.height=vp.height;
+    const ctx=cv.getContext("2d");ctx._ok=true;
+    await page.render({canvasContext:ctx,viewport:vp}).promise;
+    const wm=document.getElementById("wm"+n);
+    if(wm){const txt=(uemail||"Trafinmarket")+" | Page "+n+" | TFM-SECURED";wm.textContent=(txt+"     ").repeat(10);}
+  }catch{}
+}
+
+function buildSide(){
+  const sp=document.getElementById("spages");sp.innerHTML="";
+  for(let i=1;i<=total;i++){
+    const d=document.createElement("div");d.className="si"+(i===1?" act":"");d.id="sp"+i;
+    d.innerHTML="<div class=\"th\" id=\"th"+i+"\">"+i+"</div><span>Page "+i+"</span>";
+    d.onclick=(()=>{const x=i;return()=>goP(x);})();
+    sp.appendChild(d);
+  }
+  setTimeout(buildThumbs,600);
+}
+
+async function buildThumbs(){
+  for(let i=1;i<=Math.min(total,40);i++){
+    try{
+      const page=await pdf.getPage(i);const vp=page.getViewport({scale:.18});
+      const th=document.getElementById("th"+i);if(!th)continue;
+      th.innerHTML="";const c=document.createElement("canvas");c.width=vp.width;c.height=vp.height;
+      const ctx=c.getContext("2d");ctx._ok=true;
+      await page.render({canvasContext:ctx,viewport:vp}).promise;
+      c.style.cssText="width:100%;height:100%;object-fit:contain;pointer-events:none";
+      th.appendChild(c);
+    }catch{}
+  }
+}
+
+function goP(n){if(n<1||n>total)return;cur=n;document.getElementById("pw"+n)?.scrollIntoView({behavior:"smooth",block:"start"});upd();}
+function prevP(){goP(cur-1);}
+function nextP(){goP(cur+1);}
+document.getElementById("rmain")?.addEventListener("scroll",()=>{
+  let cl=1,md=Infinity;
+  for(let i=1;i<=total;i++){const el=document.getElementById("pw"+i);if(!el)continue;const dist=Math.abs(el.getBoundingClientRect().top-80);if(dist<md){md=dist;cl=i;}}
+  if(cl!==cur){cur=cl;upd();}
+});
+function upd(){
+  document.getElementById("pi").textContent=cur+" / "+total;
+  document.getElementById("pf").style.width=(cur/total*100)+"%";
+  document.getElementById("bprev").disabled=cur<=1;document.getElementById("bnext").disabled=cur>=total;
+  document.querySelectorAll(".si").forEach((e,i)=>e.classList.toggle("act",i+1===cur));
+  document.getElementById("sp"+cur)?.scrollIntoView({block:"nearest"});
+}
+function zIn(){if(sc<3){sc=Math.min(3,sc+.2);reZ();}}
+function zOut(){if(sc>.5){sc=Math.max(.5,sc-.2);reZ();}}
+function fitW(){const w=document.getElementById("rmain").clientWidth-32;sc=Math.min(2.5,w/640);reZ();}
+function reZ(){rendered.clear();renderAll();document.getElementById("zv").textContent=Math.round(sc*100)+"%";}
+function toggleSide(){sideOpen=!sideOpen;document.getElementById("rside").classList.toggle("open",sideOpen);document.getElementById("rmain").classList.toggle("sw",sideOpen);}
+
+init();
+</script>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('/sw.js').then(r=>console.log('SW registered')).catch(()=>{});
+  });
+}
+// PWA install prompt
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault(); deferredPrompt=e;
+  const btn=document.getElementById('pwaInstallBtn');
+  if(btn) btn.style.display='flex';
+});
+</script>
+</body>
+</html>

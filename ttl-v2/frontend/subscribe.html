@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Subscribe to Trading Journal | Trafinmarket</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Start your Trading Journal subscription. Monthly, 6-month and yearly plans available. Cancel anytime.">
+  <meta name="keywords" content="trading journal subscription, trade tracker india">
+  <meta name="author" content="Trafinmarket">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://trafinmarket.in/subscribe">
+  <!-- Open Graph (WhatsApp, Facebook) -->
+  <meta property="og:title" content="Subscribe to Trading Journal | Trafinmarket">
+  <meta property="og:description" content="Start your Trading Journal subscription. Monthly, 6-month and yearly plans available. Cancel anytime.">
+  <meta property="og:url" content="https://trafinmarket.in/subscribe">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://trafinmarket.in/assets/og-image.png">
+  <meta property="og:site_name" content="Trafinmarket">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Subscribe to Trading Journal | Trafinmarket">
+  <meta name="twitter:description" content="Start your Trading Journal subscription. Monthly, 6-month and yearly plans available. Cancel anytime.">
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<style>
+:root{--g:#0B1C2E;--g2:#F59E0B;--cr:#0A0A0A;--m:#64748B;--b:rgba(29,78,216,.13);--b2:rgba(29,78,216,.28);--gr:#059669;--r:#E63946;--pu:#7C3AED;--warn:#F59E0B}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#F8FAFC;color:var(--cr);font-family:Inter,sans-serif;font-weight:300;min-height:100vh}
+nav{background:#fff;border-bottom:1px solid var(--b);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(16,24,40,.05)}
+.nlogo{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--g);letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+.nbtn{background:none;border:1px solid var(--b);color:var(--m);padding:7px 14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:7px;font-family:Inter,sans-serif;transition:all .22s;text-decoration:none;display:inline-flex;align-items:center}
+.nbtn:hover{border-color:var(--g);color:var(--g)}
+.page{max-width:920px;margin:0 auto;padding:44px 20px 80px}
+.page-hd{text-align:center;margin-bottom:44px}
+.slbl{font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:var(--g);margin-bottom:10px;display:block}
+.ptitle{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,46px);font-weight:300;margin-bottom:10px}
+.ptitle em{font-style:italic;color:var(--g)}
+.psub{font-size:13px;color:var(--m);line-height:1.9;max-width:480px;margin:0 auto}
+/* PLAN CARDS */
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(256px,1fr));gap:18px;margin-bottom:32px}
+.plan{background:#fff;border:2px solid var(--b);border-radius:16px;padding:28px;position:relative;overflow:hidden;transition:all .3s;box-shadow:0 1px 4px rgba(16,24,40,.05)}
+.plan:hover{border-color:var(--b2);box-shadow:0 6px 22px rgba(29,78,216,.1);transform:translateY(-3px)}
+.plan.pop{border-color:var(--g)}
+.plan-ribbon{position:absolute;top:14px;right:-22px;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;font-size:8px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 36px;transform:rotate(45deg)}
+.plan-lbl{font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:var(--g);margin-bottom:8px}
+.plan-price{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--cr);line-height:1;margin-bottom:4px}
+.plan-orig{font-size:14px;color:var(--m);text-decoration:line-through;margin-bottom:3px}
+.plan-save{font-size:11px;color:var(--gr);font-weight:600;margin-bottom:6px}
+.plan-days{font-size:11px;color:var(--m);margin-bottom:18px;letter-spacing:.08em}
+.plan-feats{margin-bottom:22px}
+.plan-feat{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--m);margin-bottom:7px}
+.plan-feat span{color:var(--gr);font-size:14px;flex-shrink:0}
+.plan-btn{width:100%;padding:13px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:Inter,sans-serif;transition:all .28s;position:relative;overflow:hidden}
+.plan-btn::before{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(115deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-18deg);transition:left .55s}
+.plan-btn:hover::before{left:130%}
+.plan-btn:hover{box-shadow:0 5px 18px rgba(29,78,216,.3);transform:translateY(-1px)}
+.plan-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+/* AUTH CHECK */
+.auth-box{background:#fff;border:1px solid var(--b);border-radius:14px;padding:28px;text-align:center;margin-bottom:28px;box-shadow:0 1px 4px rgba(16,24,40,.05)}
+.auth-box h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;margin-bottom:8px}
+.auth-box p{font-size:13px;color:var(--m);margin-bottom:18px}
+.btn-pri{padding:12px 26px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:Inter,sans-serif;text-decoration:none;display:inline-block}
+.btn-out{padding:12px 26px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;background:#fff;border:1px solid var(--b);color:var(--m);border-radius:8px;cursor:pointer;font-family:Inter,sans-serif;text-decoration:none;display:inline-block;margin-left:8px;transition:all .22s}
+.btn-out:hover{border-color:var(--g);color:var(--g)}
+/* SUCCESS */
+.success{display:none;text-align:center;padding:48px 20px}
+.success-ico{font-size:56px;margin-bottom:16px}
+.success-title{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--gr);margin-bottom:10px}
+.success-sub{font-size:14px;color:var(--m);line-height:1.9;margin-bottom:28px}
+.success-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;max-width:560px;margin:0 auto 28px}
+.sc{background:#fff;border:1px solid var(--b);border-radius:10px;padding:16px;text-align:center;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.sc-ico{font-size:24px;margin-bottom:7px}
+.sc-title{font-size:13px;font-weight:500;margin-bottom:3px;font-family:'Cormorant Garamond',serif}
+.sc-sub{font-size:10px;color:var(--m)}
+/* FEATURES */
+.features{background:#fff;border:1px solid var(--b);border-radius:14px;padding:28px;margin-top:28px;box-shadow:0 1px 4px rgba(16,24,40,.05)}
+.feat-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;margin-bottom:18px;text-align:center}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.feat{display:flex;align-items:flex-start;gap:10px;padding:12px;background:#F8FAFC;border-radius:9px}
+.feat-ico{font-size:20px;flex-shrink:0;margin-top:1px}
+.feat-body{}
+.feat-name{font-size:12px;font-weight:600;color:var(--cr);margin-bottom:3px}
+.feat-desc{font-size:11px;color:var(--m);line-height:1.6}
+/* SPINNER */
+.sp{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* TOAST */
+.toast{position:fixed;bottom:20px;right:20px;padding:11px 17px;font-size:12px;z-index:9999;background:#fff;border:1px solid var(--b);border-left:3px solid var(--g);border-radius:8px;box-shadow:0 4px 16px rgba(16,24,40,.11)}
+.t-e{border-left-color:var(--r)}
+@media(max-width:600px){.plans{grid-template-columns:1fr}.feat-grid{grid-template-columns:1fr}.success-cards{grid-template-columns:1fr 1fr}.page{padding:28px 14px 60px}}
+</style>
+  <!-- Google Analytics GA4 — replace G-XXXXXXXXXX with your Measurement ID -->
+  <!-- Get ID from: analytics.google.com → Admin → Data Streams → your stream -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+    // Track PDF purchase events
+    window.trackPurchase = function(productName, price) {
+      gtag('event', 'purchase', { item_name: productName, value: price/100, currency: 'INR' });
+    };
+    // Track PDF read events
+    window.trackRead = function(productName) {
+      gtag('event', 'read_pdf', { item_name: productName });
+    };
+  </script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#F59E0B">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Trafinmarket">
+</head>
+<body>
+<nav>
+  <a href="/" class="nlogo">Trafinmarket</a>
+  <div style="display:flex;gap:8px">
+    <a href="/journal" class="nbtn">Journal</a>
+    <a href="/" class="nbtn">Home</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- SUCCESS STATE -->
+  <div class="success" id="successState">
+    <div class="success-ico">🎉</div>
+    <div class="success-title">You're Subscribed!</div>
+    <div class="success-sub" id="successMsg">Your Trading Journal subscription is active. Start logging your trades now.</div>
+    <div class="success-cards">
+      <div class="sc"><div class="sc-ico">📝</div><div class="sc-title">Log Trades Daily</div><div class="sc-sub">Track every entry</div></div>
+      <div class="sc"><div class="sc-ico">📊</div><div class="sc-title">Weekly Analytics</div><div class="sc-sub">See your patterns</div></div>
+      <div class="sc"><div class="sc-ico">🧠</div><div class="sc-title">Psychology Insights</div><div class="sc-sub">Greed & fear analysis</div></div>
+    </div>
+    <a href="/journal" class="btn-pri" style="display:inline-block;padding:14px 32px">Open Trading Journal →</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div id="mainContent">
+    <div class="page-hd">
+      <span class="slbl">Trading Journal</span>
+      <h1 class="ptitle">Choose Your <em>Subscription Plan</em></h1>
+      <p class="psub">Start tracking your trades, discipline and psychology. Cancel anytime.</p>
+    </div>
+
+    <!-- LOGIN CHECK BOX -->
+    <div class="auth-box" id="authBox" style="display:none">
+      <h3>Sign In to Subscribe</h3>
+      <p>You need an account to subscribe to the Trading Journal. It's free to create one.</p>
+      <a href="/dashboard" class="btn-pri" onclick="saveReturnUrl()">Sign In</a>
+      <a href="/" class="btn-out" onclick="saveReturnUrl()">Register</a>
+    </div>
+
+    <!-- PLAN CARDS -->
+    <div class="plans" id="planGrid">
+      <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--m)">Loading plans...</div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="features">
+      <div class="feat-title">Everything Included in Every Plan</div>
+      <div class="feat-grid">
+        <div class="feat"><div class="feat-ico">📋</div><div class="feat-body"><div class="feat-name">Daily Trade Entry</div><div class="feat-desc">Log P&L, market, instrument, direction and strategy</div></div></div>
+        <div class="feat"><div class="feat-ico">✅</div><div class="feat-body"><div class="feat-name">20-Point Discipline Checklist</div><div class="feat-desc">Pre-trade, execution and post-trade checklist with auto score</div></div></div>
+        <div class="feat"><div class="feat-ico">🏷️</div><div class="feat-body"><div class="feat-name">18 Mistake Tags</div><div class="feat-desc">Tag every trade mistake and see frequency patterns</div></div></div>
+        <div class="feat"><div class="feat-ico">😊</div><div class="feat-body"><div class="feat-name">Mood Tracking</div><div class="feat-desc">Track pre and post trade emotions — calm, fear, greed and more</div></div></div>
+        <div class="feat"><div class="feat-ico">📊</div><div class="feat-body"><div class="feat-name">Weekly/Monthly/Yearly Charts</div><div class="feat-desc">P&L trends, win rate, discipline score over time</div></div></div>
+        <div class="feat"><div class="feat-ico">🧠</div><div class="feat-body"><div class="feat-name">Psychology Analysis</div><div class="feat-desc">Greed vs fear breakdown, Risk:Reward ratio, clean trade %</div></div></div>
+        <div class="feat"><div class="feat-ico">⭐</div><div class="feat-body"><div class="feat-name">Trade Rating & Confidence</div><div class="feat-desc">Rate each trade 1–5 stars and track confidence levels</div></div></div>
+        <div class="feat"><div class="feat-ico">🔒</div><div class="feat-body"><div class="feat-name">Completely Private</div><div class="feat-desc">Your trades are visible only to you — not even admin can see them</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const tok = localStorage.getItem('tl_tok');
+const usr = (() => { try { return JSON.parse(localStorage.getItem('tl_usr')||'null'); } catch(e){ return null; } })();
+
+function saveReturnUrl(){ localStorage.setItem('returnAfterAuth','/subscribe'); }
+
+window.onload = async () => {
+  if (!tok || !usr) {
+    document.getElementById('authBox').style.display = 'block';
+  }
+  await loadPlans();
+};
+
+async function loadPlans() {
+  try {
+    const res = await fetch('/api/subscriptions/plans');
+    const { plans } = await res.json();
+    renderPlans(plans);
+  } catch(e) {
+    document.getElementById('planGrid').innerHTML = '<div style="color:var(--r);text-align:center;padding:30px">Could not load plans. Please refresh.</div>';
+  }
+}
+
+function renderPlans(plans) {
+  document.getElementById('planGrid').innerHTML = plans.map(p => {
+    const inr = (p.priceINR/100).toFixed(0);
+    const orig = p.originalPriceINR ? (p.originalPriceINR/100).toFixed(0) : null;
+    const save = orig ? Math.round(((p.originalPriceINR - p.priceINR)/p.originalPriceINR)*100) : 0;
+    const pop = p.badge === 'Most Popular';
+    return `<div class="plan ${pop?'pop':''}">
+      ${pop ? `<div class="plan-ribbon">${p.badge}</div>` : (p.badge ? `<div class="plan-ribbon">${p.badge}</div>` : '')}
+      <div class="plan-lbl">${p.label}</div>
+      <div class="plan-price">₹${parseInt(inr).toLocaleString()}</div>
+      ${orig ? `<div class="plan-orig">₹${parseInt(orig).toLocaleString()}</div><div class="plan-save">Save ${save}%</div>` : ''}
+      <div class="plan-days">${p.durationDays} days access</div>
+      <div class="plan-feats">
+        ${(p.features||[]).map(f=>`<div class="plan-feat"><span>✓</span>${f}</div>`).join('')}
+      </div>
+      <button class="plan-btn" id="btn-${p.tier}" onclick="subscribe('${p.tier}','${p.label}',${p.priceINR})">
+        Get ${p.label} Access
+      </button>
+    </div>`;
+  }).join('');
+}
+
+async function subscribe(tier, label, priceINR) {
+  if (!tok || !usr) {
+    localStorage.setItem('returnAfterAuth','/subscribe');
+    window.location = '/';
+    return;
+  }
+  const btn = document.getElementById('btn-'+tier);
+  btn.disabled = true;
+  btn.innerHTML = '<span class="sp"></span>Processing...';
+  try {
+    const orderRes = await fetch('/api/payments/razorpay/create', {
+      method:'POST',
+      headers:{'Content-Type':'application/json','Authorization':'Bearer '+tok},
+      body: JSON.stringify({ type:'journal', itemId: tier })
+    });
+    const od = await orderRes.json();
+    if (!orderRes.ok) throw new Error(od.error || 'Failed to create order');
+
+    const rzp = new Razorpay({
+      key: od.keyId,
+      amount: od.amount,
+      currency: 'INR',
+      order_id: od.orderId,
+      name: 'Trafinmarket',
+      description: 'Trading Journal — ' + label,
+      prefill: { name: usr.name, email: usr.email },
+      theme: { color: '#1D4ED8' },
+      handler: async (res) => {
+        try {
+          const vr = await fetch('/api/payments/razorpay/verify', {
+            method:'POST',
+            headers:{'Content-Type':'application/json','Authorization':'Bearer '+tok},
+            body: JSON.stringify({
+              razorpay_order_id: res.razorpay_order_id,
+              razorpay_payment_id: res.razorpay_payment_id,
+              razorpay_signature: res.razorpay_signature,
+              orderDbId: od.orderDbId
+            })
+          });
+          if (vr.ok) {
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('successState').style.display = 'block';
+            document.getElementById('successMsg').textContent =
+              `Your Trading Journal (${label}) subscription is now active. Start logging your trades!`;
+          } else {
+            throw new Error('Payment verification failed');
+          }
+        } catch(e) { toast(e.message,'e'); }
+      },
+      modal: { ondismiss: () => {
+        btn.disabled = false;
+        btn.innerHTML = 'Get ' + label + ' Access';
+      }}
+    });
+    rzp.open();
+  } catch(e) {
+    toast(e.message,'e');
+    btn.disabled = false;
+    btn.innerHTML = 'Get ' + label + ' Access';
+  }
+}
+
+function toast(msg,type='s'){const t=document.createElement('div');t.className='toast'+(type==='e'?' t-e':'');t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),4000);}
+</script>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('/sw.js').then(r=>console.log('SW registered')).catch(()=>{});
+  });
+}
+// PWA install prompt
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault(); deferredPrompt=e;
+  const btn=document.getElementById('pwaInstallBtn');
+  if(btn) btn.style.display='flex';
+});
+</script>
+</body>
+</html>

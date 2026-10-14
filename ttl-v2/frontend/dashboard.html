@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>My Dashboard — Trafinmarket</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--g:#0B1C2E;--g2:#F59E0B;--cr:#0A0A0A;--m:#64748B;--b:rgba(29,78,216,.13);--b2:rgba(29,78,216,.28);--gr:#059669;--r:#E63946;--pu:#7C3AED;--or:#EA580C;--warn:#F59E0B}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#F8FAFC;color:var(--cr);font-family:Inter,sans-serif;font-weight:300;min-height:100vh}
+nav{background:#fff;border-bottom:1px solid var(--b);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(16,24,40,.05)}
+.nlogo{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--g);letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+.nav-r{display:flex;align-items:center;gap:8px}
+.nbtn{background:none;border:1px solid var(--b);color:var(--m);padding:7px 14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:7px;font-family:Inter,sans-serif;transition:all .22s;text-decoration:none;display:inline-flex;align-items:center}
+.nbtn:hover{border-color:var(--g);color:var(--g)}
+.nbtn-pri{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff!important;border:none}
+.nbtn-danger{border-color:rgba(230,57,70,.28);color:var(--r)}
+.nbtn-danger:hover{background:#FEF2F2}
+.user-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;flex-shrink:0}
+/* PAGE */
+.page{max-width:1100px;margin:0 auto;padding:36px 20px 80px}
+/* PROFILE HERO */
+.profile-hero{background:#fff;border:1px solid var(--b);border-radius:16px;padding:28px 32px;display:flex;align-items:center;gap:22px;margin-bottom:24px;box-shadow:0 1px 4px rgba(16,24,40,.05)}
+.ph-av{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:600;flex-shrink:0}
+.ph-info{flex:1;min-width:0}
+.ph-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;margin-bottom:3px}
+.ph-email{font-size:12px;color:var(--m);margin-bottom:6px}
+.ph-badges{display:flex;gap:6px;flex-wrap:wrap}
+.ph-badge{padding:3px 10px;border-radius:100px;font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.pb-blue{background:#EFF6FF;color:var(--g);border:1px solid rgba(29,78,216,.2)}
+.pb-green{background:#F0FDF4;color:var(--gr);border:1px solid rgba(5,150,105,.2)}
+.pb-pu{background:rgba(124,58,237,.06);color:var(--pu);border:1px solid rgba(124,58,237,.2)}
+.pb-or{background:#FFF7ED;color:var(--or);border:1px solid rgba(234,88,12,.2)}
+/* QUICK ACTIONS */
+.qa-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:24px}
+.qa-card{background:#fff;border:1px solid var(--b);border-radius:12px;padding:18px 20px;cursor:pointer;transition:all .25s;text-decoration:none;display:flex;align-items:center;gap:14px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.qa-card:hover{border-color:var(--b2);box-shadow:0 4px 14px rgba(29,78,216,.1);transform:translateY(-2px)}
+.qa-ico{font-size:26px;flex-shrink:0}
+.qa-body{}
+.qa-title{font-size:13px;font-weight:500;color:var(--cr);margin-bottom:2px}
+.qa-sub{font-size:11px;color:var(--m)}
+/* SECTION TITLE */
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;margin-bottom:6px}
+.sec-sub{font-size:12px;color:var(--m);margin-bottom:18px}
+/* STAT CARDS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:24px}
+.stat{background:#fff;border:1px solid var(--b);border-radius:11px;padding:16px 18px;box-shadow:0 1px 3px rgba(16,24,40,.04);transition:all .25s;position:relative;overflow:hidden}
+.stat::after{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:linear-gradient(180deg,var(--g),var(--g2));transition:height .3s}
+.stat:hover{border-color:var(--b2);transform:translateY(-2px)}
+.stat:hover::after{height:100%}
+.stat-lbl{font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:var(--m);margin-bottom:8px}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;line-height:1}
+.stat-sub{font-size:10px;color:var(--m);margin-top:4px}
+.s-gr .stat-val{color:var(--gr)}.s-bl .stat-val{color:var(--g)}.s-r .stat-val{color:var(--r)}.s-pu .stat-val{color:var(--pu)}.s-or .stat-val{color:var(--or)}
+/* PDF SECTION */
+.pdf-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:28px}
+.pdf-card{background:#fff;border:1px solid var(--b);border-radius:12px;overflow:hidden;transition:all .25s;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.pdf-card:hover{border-color:var(--b2);box-shadow:0 4px 14px rgba(29,78,216,.08);transform:translateY(-2px)}
+.pdf-cover{height:110px;background:linear-gradient(135deg,#EFF6FF,#F8FAFC);display:flex;align-items:center;justify-content:center;font-size:36px;position:relative;overflow:hidden}
+.pdf-cover img{width:100%;height:100%;object-fit:cover}
+.pdf-exp{position:absolute;bottom:8px;right:8px;background:rgba(255,255,255,.95);border:1px solid var(--b);border-radius:100px;padding:2px 8px;font-size:9px;font-weight:600}
+.pdf-exp.green{color:var(--gr);border-color:rgba(5,150,105,.3)}
+.pdf-exp.warn{color:var(--warn);border-color:rgba(245,158,11,.3)}
+.pdf-exp.red{color:var(--r);border-color:rgba(230,57,70,.3)}
+.pdf-body{padding:12px 14px}
+.pdf-cat{font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:var(--g);margin-bottom:4px}
+.pdf-title{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:400;margin-bottom:8px;line-height:1.3}
+.read-btn{display:block;width:100%;padding:8px;text-align:center;font-size:9px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;border:none;border-radius:7px;cursor:pointer;font-family:Inter,sans-serif;transition:all .22s;text-decoration:none}
+.read-btn:hover{box-shadow:0 4px 12px rgba(29,78,216,.25)}
+.read-btn.expired{background:#F1F5F9;color:var(--m);cursor:not-allowed;box-shadow:none}
+/* JOURNAL SUMMARY */
+.journal-card{background:#fff;border:1px solid var(--b);border-radius:14px;padding:24px;box-shadow:0 1px 4px rgba(16,24,40,.05);margin-bottom:24px}
+.jc-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px}
+.jc-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:18px}
+.jc-stat{background:#F8FAFC;border-radius:9px;padding:12px 14px;text-align:center}
+.jc-stat-val{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;line-height:1}
+.jc-stat-lbl{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--m);margin-top:3px}
+/* DISC BAR */
+.disc-bar{background:#E2E8F0;border-radius:100px;height:8px;overflow:hidden;margin:10px 0}
+.disc-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--g),var(--g2));transition:width .5s}
+/* JOURNAL SUBSCRIBE */
+.journal-sub-box{background:linear-gradient(135deg,#EFF6FF,#F8FAFC);border:1px solid var(--b);border-radius:14px;padding:28px;text-align:center;margin-bottom:24px}
+.jsb-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;margin-bottom:8px}
+.jsb-sub{font-size:13px;color:var(--m);margin-bottom:20px;line-height:1.8}
+/* EMPTY STATES */
+.empty-sm{text-align:center;padding:32px 16px;color:var(--m);font-size:13px}
+/* LOCK */
+.lock-page{text-align:center;padding:80px 20px;max-width:440px;margin:0 auto}
+.lock-ico{font-size:52px;margin-bottom:14px;opacity:.2}
+.lock-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;margin-bottom:8px}
+.lock-sub{font-size:13px;color:var(--m);line-height:1.9;margin-bottom:22px}
+.btn-pri{padding:12px 26px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:Inter,sans-serif;text-decoration:none;display:inline-block;transition:all .25s}
+.btn-pri:hover{box-shadow:0 4px 14px rgba(29,78,216,.28)}
+.btn-out{padding:12px 26px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;background:#fff;border:1px solid var(--b);color:var(--m);border-radius:8px;cursor:pointer;font-family:Inter,sans-serif;text-decoration:none;display:inline-block;transition:all .22s;margin-left:8px}
+.btn-out:hover{border-color:var(--g);color:var(--g)}
+@media(max-width:600px){.profile-hero{flex-direction:column;text-align:center;padding:20px}.ph-badges{justify-content:center}.qa-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.pdf-row{grid-template-columns:1fr}.page{padding:20px 14px 60px}.jc-stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+  <!-- Google Analytics GA4 — replace G-XXXXXXXXXX with your Measurement ID -->
+  <!-- Get ID from: analytics.google.com → Admin → Data Streams → your stream -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+    // Track PDF purchase events
+    window.trackPurchase = function(productName, price) {
+      gtag('event', 'purchase', { item_name: productName, value: price/100, currency: 'INR' });
+    };
+    // Track PDF read events
+    window.trackRead = function(productName) {
+      gtag('event', 'read_pdf', { item_name: productName });
+    };
+  </script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#F59E0B">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Trafinmarket">
+</head>
+<body>
+<nav>
+  <a href="/" class="nlogo">Trafinmarket</a>
+  <div class="nav-r">
+    <a href="/my-library" class="nbtn">My Library</a>
+    <a href="/journal" class="nbtn">Journal</a>
+    <a href="/" class="nbtn">Store</a>
+    <div class="user-av" id="userAv">?</div>
+    <button class="nbtn nbtn-danger" onclick="doLogout()">Sign Out</button>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- LOCK STATE -->
+  <div id="lockState" style="display:none">
+    <div class="lock-page">
+      <div class="lock-ico">👤</div>
+      <div class="lock-title">Your Dashboard</div>
+      <div class="lock-sub">Sign in to see your purchased PDFs, journal stats, subscription status and more.</div>
+      <a href="/" class="btn-pri">Sign In</a>
+      <a href="/" class="btn-out">Register</a>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashContent" style="display:none">
+
+    <!-- PROFILE HERO -->
+    <div class="profile-hero">
+      <div class="ph-av" id="phAv">?</div>
+      <div class="ph-info">
+        <div class="ph-name" id="phName">Loading...</div>
+        <div class="ph-email" id="phEmail"></div>
+        <div class="ph-badges" id="phBadges"></div>
+      </div>
+      <div style="flex-shrink:0">
+        <a href="/my-library" class="nbtn nbtn-pri" style="margin-bottom:6px;display:block;text-align:center">My Library</a>
+        <a href="/journal" class="nbtn" style="display:block;text-align:center">Open Journal</a>
+      </div>
+    </div>
+
+    <!-- QUICK ACTIONS -->
+    <div class="qa-grid">
+      <a href="/my-library" class="qa-card">
+        <div class="qa-ico">📚</div>
+        <div class="qa-body"><div class="qa-title">My PDF Library</div><div class="qa-sub">View purchased guides</div></div>
+      </a>
+      <a href="/journal" class="qa-card">
+        <div class="qa-ico">📝</div>
+        <div class="qa-body"><div class="qa-title">Trading Journal</div><div class="qa-sub">Log today's trades</div></div>
+      </a>
+      <a href="/quiz" class="qa-card">
+        <div class="qa-ico">🎯</div>
+        <div class="qa-body"><div class="qa-title">Find My Perfect Guide</div><div class="qa-sub">Take the quiz</div></div>
+      </a>
+      <a href="/" class="qa-card">
+        <div class="qa-ico">🛒</div>
+        <div class="qa-body"><div class="qa-title">Browse More PDFs</div><div class="qa-sub">Expand your knowledge</div></div>
+      </a>
+    </div>
+
+    <!-- PDF STATS -->
+    <div class="sec-title">PDF Library Overview</div>
+    <div class="sec-sub">Your purchased guides and access status</div>
+    <div class="stats" id="pdfStats">
+      <div class="stat s-bl"><div class="stat-lbl">PDFs Owned</div><div class="stat-val" id="st-owned">—</div></div>
+      <div class="stat s-gr"><div class="stat-lbl">Active Access</div><div class="stat-val" id="st-active">—</div></div>
+      <div class="stat s-or"><div class="stat-lbl">Expiring Soon</div><div class="stat-val" id="st-expiring">—</div><div class="stat-sub">within 7 days</div></div>
+      <div class="stat s-r"><div class="stat-lbl">Expired</div><div class="stat-val" id="st-expired">—</div></div>
+    </div>
+
+    <!-- RECENT PDFS -->
+    <div class="pdf-row" id="pdfRow"></div>
+
+    <!-- JOURNAL SECTION -->
+    <div class="sec-title">Trading Journal</div>
+    <div class="sec-sub">Your discipline, performance and psychology summary</div>
+
+    <!-- IF NO SUBSCRIPTION -->
+    <div class="journal-sub-box" id="jSubBox">
+      <div style="font-size:36px;margin-bottom:12px">📝</div>
+      <div class="jsb-title">Start Your Trading Journal</div>
+      <div class="jsb-sub">Track every trade, measure your discipline, identify your biggest mistakes and greed patterns. Weekly, monthly and yearly analytics included.</div>
+      <a href="/subscribe" class="btn-pri">Subscribe to Journal →</a>
+    </div>
+
+    <!-- IF HAS SUBSCRIPTION -->
+    <div id="jSummary" style="display:none">
+      <div class="stats">
+        <div class="stat s-bl"><div class="stat-lbl">Total Trades</div><div class="stat-val" id="js-trades">—</div></div>
+        <div class="stat s-gr"><div class="stat-lbl">Total P&L</div><div class="stat-val" id="js-pnl">—</div></div>
+        <div class="stat s-bl"><div class="stat-lbl">Win Rate</div><div class="stat-val" id="js-wr">—</div></div>
+        <div class="stat s-pu"><div class="stat-lbl">Avg Discipline</div><div class="stat-val" id="js-disc">—</div></div>
+        <div class="stat s-or"><div class="stat-lbl">Top Mistake</div><div class="stat-val" id="js-mistake" style="font-size:15px">—</div></div>
+        <div class="stat s-gr"><div class="stat-lbl">Clean Trades</div><div class="stat-val" id="js-clean">—</div></div>
+      </div>
+      <div class="journal-card">
+        <div class="jc-header">
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300">Monthly Discipline</div>
+            <div style="font-size:11px;color:var(--m)" id="jSubStatus"></div>
+          </div>
+          <a href="/journal" class="btn-pri" style="font-size:9px;padding:9px 18px">Open Journal →</a>
+        </div>
+        <div id="discBars"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const tok = localStorage.getItem('tl_tok');
+const usr = (() => { try { return JSON.parse(localStorage.getItem('tl_usr')||'null'); } catch(e){ return null; } })();
+const CAT_ICON = {share:'🏭',forex:'💱',crypto:'₿',general:'🎯'};
+const CAT_NAME = {share:'Share Market',forex:'Forex',crypto:'Crypto',general:'General'};
+
+window.onload = async () => {
+  if (!tok || !usr) {
+    document.getElementById('lockState').style.display = 'block';
+    return;
+  }
+  document.getElementById('dashContent').style.display = 'block';
+  document.getElementById('phAv').textContent = (usr.name?.[0]||'?').toUpperCase();
+  document.getElementById('userAv').textContent = (usr.name?.[0]||'?').toUpperCase();
+  document.getElementById('phName').textContent = usr.name || 'User';
+  document.getElementById('phEmail').textContent = usr.email;
+  await Promise.all([ loadPDFs(), loadJournal() ]);
+};
+
+async function apiFetch(path) {
+  const r = await fetch(path, { headers: { 'Authorization': 'Bearer ' + tok, 'Content-Type': 'application/json' } });
+  if (!r.ok) throw new Error('Request failed');
+  return r.json();
+}
+
+async function loadPDFs() {
+  try {
+    const [libRes, allRes] = await Promise.all([
+      apiFetch('/api/auth/my-library'),
+      apiFetch('/api/products/all-active')
+    ]);
+    const { productIds, expiryMap } = libRes;
+    const allProds = allRes.products || [];
+    const mine = allProds.filter(p => productIds.includes(p._id))
+      .map(p => ({ ...p, expiresAt: expiryMap[p._id]||null }));
+    const now = new Date();
+    const active   = mine.filter(p => p.expiresAt && new Date(p.expiresAt) > now);
+    const expiring = active.filter(p => Math.ceil((new Date(p.expiresAt)-now)/864e5) <= 7);
+    const expired  = mine.filter(p => p.expiresAt && new Date(p.expiresAt) <= now);
+    document.getElementById('st-owned').textContent   = mine.length;
+    document.getElementById('st-active').textContent  = active.length;
+    document.getElementById('st-expiring').textContent = expiring.length;
+    document.getElementById('st-expired').textContent = expired.length;
+    const badges = [];
+    if (mine.length) badges.push(`<span class="ph-badge pb-blue">${mine.length} PDF${mine.length>1?'s':''}</span>`);
+    if (expiring.length) badges.push(`<span class="ph-badge pb-or">${expiring.length} Expiring Soon</span>`);
+    document.getElementById('phBadges').innerHTML = badges.join('');
+    if (!mine.length) {
+      document.getElementById('pdfRow').innerHTML = `<div style="grid-column:1/-1"><div class="empty-sm">No PDFs yet. <a href="/" style="color:var(--g)">Browse the store →</a></div></div>`;
+      return;
+    }
+    document.getElementById('pdfRow').innerHTML = mine.slice(0,6).map(p => {
+      const exp = p.expiresAt ? new Date(p.expiresAt) : null;
+      const days = exp ? Math.ceil((exp-now)/864e5) : null;
+      const cls = !exp||days>7 ? 'green' : days>0 ? 'warn' : 'red';
+      const txt = !exp ? 'Active' : days<=0 ? 'Expired' : days+'d left';
+      return `<div class="pdf-card">
+        <div class="pdf-cover">${p.coverImage?`<img src="${p.coverImage}">`:(CAT_ICON[p.category]||'📚')}
+          <div class="pdf-exp ${cls}">${txt}</div></div>
+        <div class="pdf-body">
+          <div class="pdf-cat">${CAT_NAME[p.category]||p.category}</div>
+          <div class="pdf-title">${p.title}</div>
+          ${days!==null&&days<=0
+            ? `<span class="read-btn expired">Expired</span>`
+            : `<a href="/reader?id=${p._id}" class="read-btn">Read Now →</a>`}
+        </div></div>`;
+    }).join('');
+  } catch(e) {
+    document.getElementById('pdfRow').innerHTML = '<div style="color:var(--m);padding:20px;text-align:center">Could not load library</div>';
+  }
+}
+
+async function loadJournal() {
+  try {
+    const accRes = await apiFetch('/api/journal/access');
+    if (!accRes.hasAccess) return;
+    document.getElementById('jSubBox').style.display = 'none';
+    document.getElementById('jSummary').style.display = 'block';
+    const exp = new Date(accRes.expiresAt);
+    const days = Math.ceil((exp-new Date())/864e5);
+    document.getElementById('jSubStatus').textContent =
+      (accRes.tier==='monthly'?'Monthly':accRes.tier==='6month'?'6-Month':'Yearly') + ' plan · ' + days + ' days left';
+    document.getElementById('phBadges').innerHTML +=
+      `<span class="ph-badge pb-green">Journal Active</span>`;
+    const a = await apiFetch('/api/journal/analytics?period=month');
+    const pnlColor = a.totalPnl >= 0 ? 'color:var(--gr)' : 'color:var(--r)';
+    document.getElementById('js-trades').textContent  = a.totalTrades;
+    const pnlEl = document.getElementById('js-pnl');
+    pnlEl.textContent = (a.totalPnl>=0?'+':'')+'₹'+Math.abs(a.totalPnl).toLocaleString();
+    pnlEl.style.color = a.totalPnl>=0?'var(--gr)':'var(--r)';
+    document.getElementById('js-wr').textContent    = a.winRate+'%';
+    document.getElementById('js-disc').textContent  = a.avgDiscipline+'%';
+    document.getElementById('js-mistake').textContent = a.topMistakes?.[0]?.tag || 'None';
+    document.getElementById('js-clean').textContent =
+      a.totalTrades ? Math.round(((a.totalTrades-(a.topMistakes?.reduce((s,m)=>s+m.count,0)||0))/a.totalTrades)*100)+'%' : '—';
+    const CL_LABELS = {
+      followedPlan:'Followed Plan',setStopLoss:'Set Stop Loss',correctPositionSize:'Position Size',
+      waitedConfirmation:'Waited Confirmation',didNotMoveStop:'No Stop Move',noAveragingDown:'No Avg Down',
+      stoppedAtLossLimit:'Loss Limit',noRevengeTrade:'No Revenge',noFomoEntry:'No FOMO',followedExitPlan:'Exit Plan'
+    };
+    document.getElementById('discBars').innerHTML = (a.checklistBreakdown||[]).slice(0,6).map(c => {
+      const col = c.pct>=80?'var(--gr)':c.pct>=50?'var(--warn)':'var(--r)';
+      return `<div style="margin-bottom:9px">
+        <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+          <span style="color:var(--m)">${CL_LABELS[c.key]||c.key}</span>
+          <span style="font-weight:600;color:${col}">${c.pct}%</span>
+        </div>
+        <div class="disc-bar"><div class="disc-fill" style="width:${c.pct}%;background:${col}"></div></div>
+      </div>`;
+    }).join('') || '<div style="color:var(--m);font-size:12px;text-align:center;padding:12px">Log some trades to see discipline breakdown</div>';
+  } catch(e) {}
+}
+
+function doLogout() {
+  localStorage.removeItem('tl_tok');
+  localStorage.removeItem('tl_usr');
+  window.location = '/';
+}
+</script>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('/sw.js').then(r=>console.log('SW registered')).catch(()=>{});
+  });
+}
+// PWA install prompt
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault(); deferredPrompt=e;
+  const btn=document.getElementById('pwaInstallBtn');
+  if(btn) btn.style.display='flex';
+});
+</script>
+</body>
+</html>

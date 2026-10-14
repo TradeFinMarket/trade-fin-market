@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PDF Library — All Trading Guides | Trafinmarket</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Browse all premium trading PDF guides. Share Market, Forex, Crypto — Basic to Advanced levels. Written with brutal honesty for Indian traders.">
+  <meta name="keywords" content="trading pdf library, share market pdf, forex pdf india, crypto guide india, trading books online">
+  <meta name="author" content="Trafinmarket">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://trafinmarket.in/library">
+  <!-- Open Graph (WhatsApp, Facebook) -->
+  <meta property="og:title" content="PDF Library — All Trading Guides | Trafinmarket">
+  <meta property="og:description" content="Browse all premium trading PDF guides. Share Market, Forex, Crypto — Basic to Advanced levels. Written with brutal honesty for Indian traders.">
+  <meta property="og:url" content="https://trafinmarket.in/library">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://trafinmarket.in/assets/og-image.png">
+  <meta property="og:site_name" content="Trafinmarket">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PDF Library — All Trading Guides | Trafinmarket">
+  <meta name="twitter:description" content="Browse all premium trading PDF guides. Share Market, Forex, Crypto — Basic to Advanced levels. Written with brutal honesty for Indian traders.">
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<style>
+:root{--g:#0B1C2E;--g2:#F59E0B;--cr:#0A0A0A;--m:#64748B;--b:rgba(29,78,216,.13);--b2:rgba(29,78,216,.28);--gr:#059669;--r:#E63946;--pu:#7C3AED;--or:#EA580C}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#F8FAFC;color:var(--cr);font-family:Inter,sans-serif;font-weight:300;min-height:100vh}
+nav{background:#fff;border-bottom:1px solid var(--b);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(16,24,40,.05)}
+.nlogo{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--g);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;display:flex;flex-direction:column;line-height:1.2}
+.nlogo small{font-size:8px;color:var(--m);letter-spacing:.3em;font-family:Inter,sans-serif}
+.nav-r{display:flex;align-items:center;gap:8px}
+.nbtn{background:none;border:1px solid var(--b);color:var(--m);padding:7px 14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:7px;font-family:Inter,sans-serif;transition:all .22s;text-decoration:none;display:inline-flex;align-items:center}
+.nbtn:hover{border-color:var(--g);color:var(--g)}
+.nbtn-pri{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff!important;border:none}
+.user-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;cursor:pointer;flex-shrink:0}
+.page{max-width:1100px;margin:0 auto;padding:44px 20px 80px}
+.page-hd{margin-bottom:32px}
+.slbl{font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:var(--g);margin-bottom:8px;display:block}
+.ptitle{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,48px);font-weight:300;margin-bottom:6px}
+.ptitle em{font-style:italic;color:var(--g)}
+.psub{font-size:13px;color:var(--m);line-height:1.8}
+/* SEARCH + FILTER BAR */
+.filter-bar{display:flex;align-items:center;gap:10px;margin-bottom:28px;flex-wrap:wrap}
+.search-wrap{flex:1;min-width:200px;position:relative}
+.search-ico{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--m);font-size:14px;pointer-events:none}
+.search-inp{width:100%;background:#fff;border:1px solid var(--b);color:var(--cr);padding:10px 12px 10px 36px;font-size:12px;font-family:Inter,sans-serif;outline:none;border-radius:8px;transition:border-color .22s}
+.search-inp:focus{border-color:var(--g);box-shadow:0 0 0 3px rgba(29,78,216,.07)}
+.search-inp::placeholder{color:var(--m)}
+.cat-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.cat-tab{padding:8px 16px;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--b);background:#fff;color:var(--m);cursor:pointer;border-radius:8px;transition:all .2s;font-family:Inter,sans-serif}
+.cat-tab.act{background:var(--g);color:#fff;border-color:var(--g)}
+.cat-tab:hover:not(.act){border-color:var(--g);color:var(--g)}
+.level-sel{background:#fff;border:1px solid var(--b);color:var(--m);padding:9px 12px;font-size:11px;font-family:Inter,sans-serif;outline:none;border-radius:8px;cursor:pointer;appearance:none;transition:border-color .22s}
+.level-sel:focus{border-color:var(--g)}
+/* STATS */
+.lib-stats{display:flex;gap:18px;margin-bottom:24px;flex-wrap:wrap}
+.lib-stat{font-size:12px;color:var(--m)}
+.lib-stat strong{color:var(--g);font-weight:600}
+/* GRID */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
+.pcard{background:#fff;border:1px solid var(--b);border-radius:14px;overflow:hidden;transition:all .3s;box-shadow:0 1px 3px rgba(16,24,40,.04);display:flex;flex-direction:column;position:relative}
+.pcard:hover{border-color:var(--b2);box-shadow:0 5px 18px rgba(29,78,216,.1);transform:translateY(-3px)}
+.pc-badge{position:absolute;top:10px;left:10px;font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:100px;z-index:1}
+.pb-Bestseller{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff}
+.pb-New{background:linear-gradient(135deg,var(--gr),#34D399);color:#fff}
+.pb-Premium{background:linear-gradient(135deg,var(--pu),#A78BFA);color:#fff}
+.pb-Free{background:linear-gradient(135deg,var(--gr),#34D399);color:#fff}
+.pc-cover{height:140px;background:linear-gradient(135deg,#EFF6FF,#F8FAFC);display:flex;align-items:center;justify-content:center;font-size:44px;position:relative;overflow:hidden}
+.pc-cover img{width:100%;height:100%;object-fit:cover}
+.pc-owned{position:absolute;bottom:8px;right:8px;background:var(--gr);color:#fff;font-size:8px;font-weight:700;padding:3px 8px;border-radius:100px;letter-spacing:.1em;text-transform:uppercase}
+.pc-body{padding:14px 16px;flex:1;display:flex;flex-direction:column}
+.pc-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.pc-cat{font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:var(--g)}
+.pc-level{font-size:8px;font-weight:500;padding:2px 7px;border-radius:100px;letter-spacing:.1em;text-transform:uppercase}
+.lv-Basic{background:#F0FDF4;color:var(--gr)}.lv-Intermediate{background:#EFF6FF;color:var(--g)}.lv-Advance{background:#FFF7ED;color:var(--or)}.lv-Super\.Advance,.lv-Super-Advance{background:#FEF2F2;color:var(--r)}.lv-Pro\.Advance,.lv-Pro-Advance{background:rgba(124,58,237,.08);color:var(--pu)}
+.pc-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;margin-bottom:6px;line-height:1.3}
+.pc-desc{font-size:11px;color:var(--m);line-height:1.7;margin-bottom:12px;flex:1}
+.pc-foot{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid rgba(29,78,216,.06);margin-top:auto}
+.pc-price{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--g)}
+.pc-price.free{color:var(--gr)}
+.pc-btn{padding:8px 16px;font-size:9px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;border:none;border-radius:7px;cursor:pointer;font-family:Inter,sans-serif;transition:all .22s;text-decoration:none;display:inline-block}
+.pc-btn:hover{box-shadow:0 4px 12px rgba(29,78,216,.25);transform:translateY(-1px)}
+.pc-btn.read{background:linear-gradient(135deg,var(--gr),#34D399)}
+.pc-btn.free-btn{background:linear-gradient(135deg,var(--gr),#34D399)}
+/* EMPTY */
+.empty{text-align:center;padding:60px 20px}
+.empty-ico{font-size:44px;opacity:.2;margin-bottom:14px}
+/* BRUTAL TRUTH MODAL */
+.mo{display:none;position:fixed;inset:0;background:rgba(15,23,42,.75);z-index:2000;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(6px)}
+.mo.open{display:flex;animation:fdIn .25s ease}
+@keyframes fdIn{from{opacity:0}to{opacity:1}}
+.md{background:#fff;border:1px solid var(--b);border-radius:16px;width:100%;max-width:580px;max-height:92vh;overflow-y:auto;box-shadow:0 20px 60px rgba(16,24,40,.18);animation:slUp .3s ease}
+@keyframes slUp{from{transform:translateY(18px);opacity:0}to{transform:translateY(0);opacity:1}}
+.mh{padding:18px 24px;border-bottom:1px solid var(--b);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;z-index:10}
+.mt{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:300}
+.mx{background:none;border:none;color:var(--m);font-size:18px;cursor:pointer}
+.mx:hover{color:var(--r)}
+.mb{padding:20px 24px 26px}
+.bt-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.bt-stat{background:#FEF2F2;border:1px solid rgba(230,57,70,.15);border-radius:10px;padding:13px;text-align:center}
+.bt-num{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--r)}
+.bt-lbl{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--m);margin-top:2px}
+.bt-box{background:#FFF7ED;border:1px solid rgba(234,88,12,.15);border-radius:9px;padding:12px 14px;margin-bottom:10px}
+.bt-box-title{font-size:11px;font-weight:600;color:var(--or);margin-bottom:3px}
+.bt-box-text{font-size:11px;color:var(--m);line-height:1.8}
+.bt-check{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid rgba(29,78,216,.05);cursor:pointer}
+.bt-check input{width:15px;height:15px;accent-color:var(--g);flex-shrink:0;margin-top:2px}
+.bt-check-text{font-size:12px;color:var(--m);line-height:1.7}
+.bt-proceed{width:100%;padding:14px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;border:none;border-radius:9px;cursor:pointer;font-family:Inter,sans-serif;transition:all .3s;margin-top:14px}
+.bt-proceed:disabled{opacity:.38;cursor:not-allowed}
+.bt-proceed:not(:disabled):hover{box-shadow:0 4px 16px rgba(29,78,216,.3)}
+/* AUTH MODAL */
+.auth-tabs{display:flex;gap:3px;background:#F1F5F9;border-radius:8px;padding:3px;margin-bottom:16px}
+.auth-tab{flex:1;padding:8px;text-align:center;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border-radius:6px;color:var(--m);font-family:Inter,sans-serif;border:none;background:transparent;transition:all .2s}
+.auth-tab.act{background:#fff;color:var(--g);box-shadow:0 1px 4px rgba(16,24,40,.08)}
+.fg{margin-bottom:12px}
+.fl{display:block;font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:var(--g);margin-bottom:5px}
+.fi{width:100%;background:#fff;border:1px solid var(--b);color:var(--cr);padding:9px 12px;font-size:12px;font-family:Inter,sans-serif;outline:none;border-radius:7px;transition:border-color .22s}
+.fi:focus{border-color:var(--g);box-shadow:0 0 0 3px rgba(29,78,216,.07)}
+.auth-err{font-size:11px;color:var(--r);padding:8px 12px;background:#FEF2F2;border-radius:7px;display:none;margin-bottom:10px}
+.auth-btn{width:100%;padding:12px;font-size:10px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:Inter,sans-serif}
+/* TOAST */
+.toast{position:fixed;bottom:20px;right:20px;padding:11px 17px;font-size:12px;z-index:9999;background:#fff;border:1px solid var(--b);border-left:3px solid var(--g);border-radius:8px;box-shadow:0 4px 16px rgba(16,24,40,.11);animation:slUp .28s ease;max-width:300px}
+.t-e{border-left-color:var(--r)}.t-s{border-left-color:var(--gr)}
+.sp{display:inline-block;width:13px;height:13px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:5px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:600px){.pgrid{grid-template-columns:1fr}.filter-bar{flex-direction:column;align-items:stretch}.cat-tabs{justify-content:flex-start}.page{padding:24px 14px 60px}.bt-stats{grid-template-columns:repeat(3,1fr)}}
+</style>
+  <!-- Google Analytics GA4 — replace G-XXXXXXXXXX with your Measurement ID -->
+  <!-- Get ID from: analytics.google.com → Admin → Data Streams → your stream -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+    // Track PDF purchase events
+    window.trackPurchase = function(productName, price) {
+      gtag('event', 'purchase', { item_name: productName, value: price/100, currency: 'INR' });
+    };
+    // Track PDF read events
+    window.trackRead = function(productName) {
+      gtag('event', 'read_pdf', { item_name: productName });
+    };
+  </script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#F59E0B">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Trafinmarket">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nlogo">Trafinmarket<small>Premium Knowledge Platform</small></a>
+  <div class="nav-r">
+    <a href="/bundles" class="nbtn">&#128230; Bundles</a>
+    <a href="/quiz" class="nbtn">&#127919; Find My Guide</a>
+    <a href="/my-library" class="nbtn" id="navLib" style="display:none">My Library</a>
+    <div class="user-av" id="userAv" style="display:none" onclick="window.location='/dashboard'">?</div>
+    <button class="nbtn nbtn-pri" id="navSignIn" onclick="openM('authModal')">Sign In</button>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="page-hd">
+    <span class="slbl">The Collection</span>
+    <h1 class="ptitle">Premium <em>Library</em></h1>
+    <p class="psub">Every PDF is written with brutal honesty — what actually works in Indian markets.</p>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <div class="search-wrap">
+      <span class="search-ico">&#128269;</span>
+      <input class="search-inp" id="searchInp" placeholder="Search by title, author, topic..." oninput="filterProducts()">
+    </div>
+    <div class="cat-tabs">
+      <button class="cat-tab act" onclick="setCat('all',this)">All</button>
+      <button class="cat-tab" onclick="setCat('share',this)">&#127758; Share Market</button>
+      <button class="cat-tab" onclick="setCat('forex',this)">&#128176; Forex</button>
+      <button class="cat-tab" onclick="setCat('crypto',this)">&#8383; Crypto</button>
+    </div>
+    <select class="level-sel" id="levelSel" onchange="filterProducts()">
+      <option value="all">All Levels</option>
+      <option value="Basic">Basic</option>
+      <option value="Intermediate">Intermediate</option>
+      <option value="Advance">Advance</option>
+      <option value="Super Advance">Super Advance</option>
+      <option value="Pro Advance">Pro Advance</option>
+    </select>
+  </div>
+
+  <div class="lib-stats" id="libStats"></div>
+
+  <div class="pgrid" id="prodGrid">
+    <div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--m)">
+      <div style="font-size:30px;margin-bottom:10px;animation:spin 1.5s linear infinite;display:inline-block">&#9680;</div>
+      <div>Loading library...</div>
+    </div>
+  </div>
+</div>
+
+<!-- BRUTAL TRUTH MODAL -->
+<div class="mo" id="btModal">
+  <div class="md">
+    <div class="mh"><div class="mt">Before You Buy</div><button class="mx" onclick="closeM('btModal')">&#10005;</button></div>
+    <div class="mb">
+      <div class="bt-stats">
+        <div class="bt-stat"><div class="bt-num">90%</div><div class="bt-lbl">Lose money yr 1</div></div>
+        <div class="bt-stat"><div class="bt-num">5yr</div><div class="bt-lbl">Real consistency</div></div>
+        <div class="bt-stat"><div class="bt-num">0</div><div class="bt-lbl">Shortcuts exist</div></div>
+      </div>
+      <div class="bt-box"><div class="bt-box-title">&#9888; Not a get-rich-quick guide</div><div class="bt-box-text">Real trading education. Not signals, not tips, not promises. Results depend entirely on your commitment.</div></div>
+      <div class="bt-box"><div class="bt-box-title">&#9200; Time-limited access</div><div class="bt-box-text">Read-only access, no downloads. Commit to studying within the access window.</div></div>
+      <div style="margin:16px 0 6px;font-size:11px;font-weight:600">I confirm that:</div>
+      <label class="bt-check"><input type="checkbox" id="btc1" onchange="checkBT()"><div class="bt-check-text">This is educational content only — not financial advice</div></label>
+      <label class="bt-check"><input type="checkbox" id="btc2" onchange="checkBT()"><div class="bt-check-text">Trading involves significant financial risk</div></label>
+      <label class="bt-check"><input type="checkbox" id="btc3" onchange="checkBT()"><div class="bt-check-text">I commit to studying this within the access window</div></label>
+      <button class="bt-proceed" id="btProceed" onclick="doPay()" disabled>Proceed to Payment</button>
+    </div>
+  </div>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="mo" id="authModal">
+  <div class="md" style="max-width:460px">
+    <div class="mh"><div class="mt" id="authTitle">Sign In</div><button class="mx" onclick="closeM('authModal')">&#10005;</button></div>
+    <div class="mb">
+      <div class="auth-tabs">
+        <button class="auth-tab act" id="tab-login" onclick="switchTab('login')">Sign In</button>
+        <button class="auth-tab" id="tab-reg" onclick="switchTab('register')">Register</button>
+      </div>
+      <div id="regF" style="display:none">
+        <div class="fg"><label class="fl">Full Name *</label><input class="fi" id="aName" placeholder="Your full name"></div>
+        <div class="fg"><label class="fl">Phone Number *</label><input class="fi" id="aPhone" type="tel" placeholder="+91 9876543210" maxlength="15"></div>
+      </div>
+      <div id="otpStep1">
+        <div class="fg"><label class="fl">Email Address *</label><input class="fi" id="aEmail" type="email" placeholder="you@example.com"></div>
+        <div class="fg"><label class="fl">Password *</label><input class="fi" id="aPass" type="password" placeholder="••••••••" onkeydown="if(event.key==='Enter')doAuth()"></div>
+        <div class="auth-err" id="authErr"></div>
+        <button class="auth-btn" id="authBtn" onclick="doAuth()">Sign In</button>
+        <p style="text-align:center;font-size:11px;color:var(--m);margin-top:12px" id="authSwTxt">
+          No account? <span style="color:var(--g);cursor:pointer" onclick="switchTab('register')">Register free</span>
+          &nbsp;·&nbsp; <span style="color:var(--g);cursor:pointer" onclick="showForgot()">Forgot password?</span>
+        </p>
+      </div>
+      <div id="otpStep2" style="display:none">
+        <div style="text-align:center;margin-bottom:18px">
+          <div style="font-size:36px;margin-bottom:8px">&#128233;</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:6px" id="otpTitle">Check Your Email</div>
+          <div style="font-size:12px;color:var(--m)">6-digit OTP sent to <strong id="otpEmail"></strong></div>
+        </div>
+        <div class="fg"><label class="fl">Enter OTP</label><input class="fi" id="otpInp" type="text" placeholder="Enter 6-digit OTP" maxlength="6" style="text-align:center;font-size:20px;font-weight:600;letter-spacing:8px" oninput="this.value=this.value.replace(/\D/g,'')"></div>
+        <div id="newPassWrap" style="display:none">
+          <div class="fg"><label class="fl">New Password</label><input class="fi" id="newPass" type="password" placeholder="Min 6 characters"></div>
+        </div>
+        <div class="auth-err" id="otpErr"></div>
+        <button class="auth-btn" id="otpBtn" onclick="verifyOTP()">Verify OTP</button>
+        <p style="text-align:center;font-size:11px;color:var(--m);margin-top:12px">
+          <span style="color:var(--g);cursor:pointer" onclick="backToStep1()">&#8592; Back</span>
+          &nbsp;·&nbsp; <span style="color:var(--g);cursor:pointer" onclick="resendOTP()">Resend OTP</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const tok = localStorage.getItem('tl_tok');
+const usr = (() => { try { return JSON.parse(localStorage.getItem('tl_usr')||'null'); } catch(e){ return null; } })();
+
+let allProds = [], myIds = [], curCat = 'all', curItem = null, authMode = 'login', otpMode = 'register', pendItem = null;
+
+window.onload = async () => {
+  if (usr) {
+    document.getElementById('userAv').textContent = (usr.name?.[0]||'?').toUpperCase();
+    document.getElementById('userAv').style.display = 'flex';
+    document.getElementById('navLib').style.display = 'inline-flex';
+    document.getElementById('navSignIn').style.display = 'none';
+    try { const r = await api('/api/auth/my-library'); myIds = r.productIds || []; } catch(e) {}
+  }
+  // Read category from URL ?cat=share etc
+  const params = new URLSearchParams(window.location.search);
+  const urlCat = params.get('cat');
+  if (urlCat) {
+    curCat = urlCat;
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('act'));
+    const tabs = document.querySelectorAll('.cat-tab');
+    const catMap = {all:0, share:1, forex:2, crypto:3};
+    const idx = catMap[urlCat];
+    if (idx !== undefined && tabs[idx]) tabs[idx].classList.add('act');
+  }
+  await loadProducts();
+};
+
+async function api(path, method='GET', body=null) {
+  const h = {'Content-Type':'application/json'};
+  if (tok) h['Authorization'] = 'Bearer ' + tok;
+  const o = {method, headers: h};
+  if (body) o.body = JSON.stringify(body);
+  const r = await fetch(path, o);
+  const d = await r.json().catch(()=>({}));
+  if (!r.ok) throw new Error(d.error || 'Request failed');
+  return d;
+}
+
+async function loadProducts() {
+  try {
+    const { products } = await api('/api/products/all-active');
+    allProds = products || [];
+    updateStats();
+    renderProducts(allProds);
+  } catch(e) {
+    document.getElementById('prodGrid').innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--r)">${e.message}<br><button onclick="loadProducts()" style="margin-top:12px;padding:9px 20px;background:var(--g);color:#fff;border:none;border-radius:7px;cursor:pointer;font-family:Inter,sans-serif">Retry</button></div>`;
+  }
+}
+
+function updateStats() {
+  const total = allProds.length;
+  const owned = allProds.filter(p => myIds.includes(p._id)).length;
+  const free  = allProds.filter(p => p.isFree).length;
+  document.getElementById('libStats').innerHTML = `
+    <div class="lib-stat"><strong>${total}</strong> total PDFs</div>
+    ${owned ? `<div class="lib-stat"><strong>${owned}</strong> owned by you</div>` : ''}
+    ${free  ? `<div class="lib-stat"><strong>${free}</strong> free</div>` : ''}`;
+}
+
+function setCat(cat, btn) {
+  curCat = cat;
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('act'));
+  btn.classList.add('act');
+  filterProducts();
+}
+
+function filterProducts() {
+  const q     = document.getElementById('searchInp').value.toLowerCase();
+  const level = document.getElementById('levelSel').value;
+  let filtered = allProds;
+  if (curCat !== 'all') filtered = filtered.filter(p => p.category === curCat);
+  if (level !== 'all')  filtered = filtered.filter(p => p.level === level);
+  if (q) filtered = filtered.filter(p => (p.title+p.author+p.description+p.tags?.join('')).toLowerCase().includes(q));
+  renderProducts(filtered);
+}
+
+const CAT_NAME = {share:'Share Market',forex:'Forex',crypto:'Crypto',general:'General'};
+const CAT_ICON = {share:'🏭',forex:'💱',crypto:'₿',general:'🎯'};
+
+function renderProducts(prods) {
+  const g = document.getElementById('prodGrid');
+  if (!prods.length) {
+    g.innerHTML = `<div style="grid-column:1/-1"><div class="empty"><div class="empty-ico">&#128218;</div><p style="font-size:14px;color:var(--m);margin-bottom:14px">No PDFs match your search</p><button onclick="document.getElementById('searchInp').value='';setCat('all',document.querySelector('.cat-tab'));filterProducts()" style="padding:9px 20px;background:var(--g);color:#fff;border:none;border-radius:7px;cursor:pointer;font-family:Inter,sans-serif;font-size:11px">Clear Filters</button></div></div>`;
+    return;
+  }
+  g.innerHTML = prods.map(p => {
+    const owned = myIds.includes(p._id);
+    const inr   = (p.priceINR/100).toFixed(0);
+    const lvlKey = p.level?.replace(' ','-') || 'Basic';
+    return `<div class="pcard">
+      ${p.badge ? `<div class="pc-badge pb-${p.badge}">${p.badge}</div>` : ''}
+      ${p.isFree ? `<div class="pc-badge pb-Free" style="left:auto;right:10px">FREE</div>` : ''}
+      <div class="pc-cover">
+        ${p.coverImage ? `<img src="${p.coverImage}" alt="${p.title}">` : (CAT_ICON[p.category]||'📚')}
+        ${owned ? `<div class="pc-owned">&#10003; Owned</div>` : ''}
+      </div>
+      <div class="pc-body">
+        <div class="pc-meta">
+          <div class="pc-cat">${CAT_NAME[p.category]||p.category}</div>
+          <span class="pc-level lv-${lvlKey}">${p.level||'Basic'}</span>
+        </div>
+        <div class="pc-title">${p.title}</div>
+        <div class="pc-desc">${p.shortDesc||p.description?.substring(0,90)||''}</div>
+        <div class="pc-foot">
+          <div class="pc-price ${p.isFree?'free'}">${p.isFree ? 'FREE' : '₹'+parseInt(inr).toLocaleString()}</div>
+          ${owned
+            ? `<a href="/reader?id=${p._id}" class="pc-btn read">Read &#8594;</a>`
+            : p.isFree
+              ? `<button class="pc-btn free-btn" onclick="claimFree('${p._id}')">Get Free</button>`
+              : `<button class="pc-btn" onclick="buyProduct('${p._id}','${p.title?.replace(/'/g,"\\'")}',${p.priceINR})">Buy Now</button>`}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function claimFree(id) {
+  if (!usr) { pendItem = {id, type:'free'}; openM('authModal'); return; }
+  try {
+    await api('/api/payments/claim-free', 'POST', { productId: id });
+    toast('Access granted! Go to My Library to read.', 's');
+    myIds.push(id);
+    filterProducts();
+  } catch(e) { toast(e.message, 'e'); }
+}
+
+function buyProduct(id, title, priceINR) {
+  if (!usr) { pendItem = {id, title, priceINR, type:'product'}; openM('authModal'); return; }
+  curItem = {id, title, priceINR};
+  document.getElementById('btc1').checked = false;
+  document.getElementById('btc2').checked = false;
+  document.getElementById('btc3').checked = false;
+  document.getElementById('btProceed').disabled = true;
+  openM('btModal');
+}
+
+function checkBT() {
+  document.getElementById('btProceed').disabled =
+    !(document.getElementById('btc1').checked && document.getElementById('btc2').checked && document.getElementById('btc3').checked);
+}
+
+async function doPay() {
+  if (!curItem) return;
+  closeM('btModal');
+  try {
+    const od = await api('/api/payments/razorpay/create', 'POST', { type:'product', itemId: curItem.id });
+    const rzp = new Razorpay({
+      key: od.keyId, amount: od.amount, currency: 'INR', order_id: od.orderId,
+      name: 'Trafinmarket', description: curItem.title,
+      prefill: { name: usr.name, email: usr.email }, theme: { color: '#1D4ED8' },
+      handler: async (res) => {
+        try {
+          await api('/api/payments/razorpay/verify', 'POST', {
+            razorpay_order_id: res.razorpay_order_id,
+            razorpay_payment_id: res.razorpay_payment_id,
+            razorpay_signature: res.razorpay_signature,
+            orderDbId: od.orderDbId
+          });
+          toast('Purchase successful! Go to My Library.', 's');
+          myIds.push(curItem.id);
+          filterProducts();
+        } catch(e) { toast('Verification failed. Contact support.', 'e'); }
+      }
+    });
+    rzp.open();
+  } catch(e) { toast(e.message || 'Payment failed', 'e'); }
+}
+
+// ── AUTH ──────────────────────────────────────────────────────
+function switchTab(mode) {
+  authMode = mode; otpMode = mode;
+  const isReg = mode === 'register';
+  document.getElementById('tab-login').classList.toggle('act', !isReg);
+  document.getElementById('tab-reg').classList.toggle('act', isReg);
+  document.getElementById('regF').style.display = isReg ? 'block' : 'none';
+  document.getElementById('authTitle').textContent = isReg ? 'Create Account' : 'Sign In';
+  document.getElementById('authBtn').textContent = isReg ? 'Send OTP' : 'Sign In';
+  document.getElementById('authErr').style.display = 'none';
+  document.getElementById('otpStep1').style.display = 'block';
+  document.getElementById('otpStep2').style.display = 'none';
+  document.getElementById('authSwTxt').innerHTML = isReg
+    ? `Already have account? <span style="color:var(--g);cursor:pointer" onclick="switchTab('login')">Sign in</span>`
+    : `No account? <span style="color:var(--g);cursor:pointer" onclick="switchTab('register')">Register free</span> &nbsp;·&nbsp; <span style="color:var(--g);cursor:pointer" onclick="showForgot()">Forgot password?</span>`;
+}
+
+function showForgot() {
+  otpMode = 'forgot';
+  document.getElementById('authTitle').textContent = 'Reset Password';
+  document.getElementById('regF').style.display = 'none';
+  document.getElementById('aPass').closest('.fg').style.display = 'none';
+  document.getElementById('authBtn').textContent = 'Send Reset OTP';
+  document.getElementById('authSwTxt').innerHTML = `<span style="color:var(--g);cursor:pointer" onclick="switchTab('login')">&#8592; Back to Sign In</span>`;
+  document.getElementById('authErr').style.display = 'none';
+}
+
+function backToStep1() {
+  document.getElementById('otpStep1').style.display = 'block';
+  document.getElementById('otpStep2').style.display = 'none';
+  // Restore password field if hidden
+  const pf = document.getElementById('aPass').closest('.fg');
+  if (pf) pf.style.display = 'block';
+}
+
+async function resendOTP() {
+  const email = document.getElementById('aEmail').value.trim();
+  try {
+    const endpoint = otpMode === 'forgot' ? '/api/auth/forgot-password' : '/api/auth/send-otp';
+    await api(endpoint, 'POST', { email, purpose: otpMode === 'forgot' ? 'reset' : 'register' });
+    toast('New OTP sent!', 's');
+  } catch(e) { toast(e.message, 'e'); }
+}
+
+async function doAuth() {
+  const email = document.getElementById('aEmail').value.trim();
+  const errEl = document.getElementById('authErr');
+  errEl.style.display = 'none';
+  const btn = document.getElementById('authBtn');
+  btn.disabled = true;
+
+  try {
+    if (authMode === 'login') {
+      const pass = document.getElementById('aPass').value;
+      if (!email || !pass) throw new Error('Please fill all fields');
+      btn.textContent = 'Signing in...';
+      const d = await api('/api/auth/login', 'POST', { email, password: pass });
+      localStorage.setItem('tl_tok', d.token);
+      localStorage.setItem('tl_usr', JSON.stringify(d.user));
+      closeM('authModal');
+      if (pendItem) { const pi = pendItem; pendItem = null; setTimeout(() => { if (pi.type==='free') claimFree(pi.id); else buyProduct(pi.id, pi.title, pi.priceINR); }, 300); }
+      else window.location.reload();
+
+    } else if (otpMode === 'forgot') {
+      if (!email) throw new Error('Email is required');
+      btn.textContent = 'Sending OTP...';
+      await api('/api/auth/forgot-password', 'POST', { email });
+      document.getElementById('otpEmail').textContent = email;
+      document.getElementById('otpTitle').textContent = 'Reset Password';
+      document.getElementById('newPassWrap').style.display = 'block';
+      document.getElementById('otpBtn').textContent = 'Reset Password';
+      document.getElementById('otpStep1').style.display = 'none';
+      document.getElementById('otpStep2').style.display = 'block';
+
+    } else {
+      // Register
+      const name  = document.getElementById('aName').value.trim();
+      const phone = document.getElementById('aPhone').value.trim();
+      const pass  = document.getElementById('aPass').value;
+      if (!name || !email || !phone || !pass) throw new Error('Please fill all fields');
+      if (phone.replace(/\D/g,'').length < 10) throw new Error('Enter valid 10-digit phone number');
+      if (pass.length < 6) throw new Error('Password must be at least 6 characters');
+      btn.textContent = 'Sending OTP...';
+      const r = await api('/api/auth/send-otp', 'POST', { email, name, purpose: 'register' });
+      document.getElementById('otpEmail').textContent = email;
+      document.getElementById('otpTitle').textContent = 'Verify Your Email';
+      document.getElementById('newPassWrap').style.display = 'none';
+      document.getElementById('otpBtn').textContent = 'Create Account';
+      document.getElementById('otpStep1').style.display = 'none';
+      document.getElementById('otpStep2').style.display = 'block';
+      if (r.devOtp) { document.getElementById('otpInp').value = r.devOtp; toast('DEV: OTP auto-filled', 's'); }
+    }
+  } catch(e) {
+    errEl.textContent = e.message;
+    errEl.style.display = 'block';
+  } finally { btn.disabled = false; btn.textContent = authMode === 'login' ? 'Sign In' : otpMode === 'forgot' ? 'Send Reset OTP' : 'Send OTP'; }
+}
+
+async function verifyOTP() {
+  const otp   = document.getElementById('otpInp').value.trim();
+  const email = document.getElementById('aEmail').value.trim();
+  const errEl = document.getElementById('otpErr');
+  const btn   = document.getElementById('otpBtn');
+  errEl.style.display = 'none';
+  if (!otp || otp.length !== 6) { errEl.textContent = 'Enter the 6-digit OTP'; errEl.style.display = 'block'; return; }
+  btn.disabled = true; btn.textContent = 'Verifying...';
+  try {
+    if (otpMode === 'forgot') {
+      const newPass = document.getElementById('newPass').value;
+      if (!newPass || newPass.length < 6) throw new Error('New password must be at least 6 characters');
+      await api('/api/auth/reset-password', 'POST', { email, otp, newPassword: newPass });
+      toast('Password reset! Please sign in.', 's');
+      closeM('authModal');
+      setTimeout(() => { switchTab('login'); openM('authModal'); }, 500);
+    } else {
+      const name  = document.getElementById('aName').value.trim();
+      const phone = document.getElementById('aPhone').value.trim();
+      const pass  = document.getElementById('aPass').value;
+      const d = await api('/api/auth/register', 'POST', { name, email, password: pass, phone, otp });
+      localStorage.setItem('tl_tok', d.token);
+      localStorage.setItem('tl_usr', JSON.stringify(d.user));
+      closeM('authModal');
+      if (pendItem) { const pi = pendItem; pendItem = null; setTimeout(() => { if (pi.type==='free') claimFree(pi.id); else buyProduct(pi.id, pi.title, pi.priceINR); }, 300); }
+      else window.location.reload();
+    }
+  } catch(e) { errEl.textContent = e.message; errEl.style.display = 'block'; }
+  finally { btn.disabled = false; btn.textContent = otpMode === 'forgot' ? 'Reset Password' : 'Create Account'; }
+}
+
+function openM(id)  { document.getElementById(id).classList.add('open');    document.body.style.overflow = 'hidden'; }
+function closeM(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+document.addEventListener('keydown', e => { if(e.key==='Escape') { document.querySelectorAll('.mo.open').forEach(m => m.classList.remove('open')); document.body.style.overflow=''; }});
+document.querySelectorAll('.mo').forEach(m => m.addEventListener('click', e => { if(e.target===m){ closeM(m.id); } }));
+function toast(msg, type='s') { const t=document.createElement('div'); t.className='toast t-'+type; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(), 4000); }
+</script>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('/sw.js').then(r=>console.log('SW registered')).catch(()=>{});
+  });
+}
+// PWA install prompt
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault(); deferredPrompt=e;
+  const btn=document.getElementById('pwaInstallBtn');
+  if(btn) btn.style.display='flex';
+});
+</script>
+</body>
+</html>

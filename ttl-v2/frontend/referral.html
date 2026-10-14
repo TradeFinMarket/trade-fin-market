@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Refer & Earn — Trafinmarket</title>
+<meta name="description" content="Earn 10% commission for every trader you refer to Trafinmarket.">
+<link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#F59E0B">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1C2E;--amber:#F59E0B;--bg:#F8F7F4;--bg2:#EFECE6;--white:#fff;--ink:#1A2332;--muted:#5A6B7A;--border:#DDD9D0;--gr:#059669;--r:#DC2626}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300}
+nav{background:var(--navy);border-bottom:2px solid var(--amber);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
+.nlogo{text-decoration:none;display:flex;flex-direction:column;line-height:1}
+.nlogo .nm{font-family:'Playfair Display',serif;font-size:17px;color:#fff;font-weight:700}
+.nlogo .ns{font-size:7px;letter-spacing:.4em;text-transform:uppercase;color:var(--amber)}
+.nav-r{display:flex;gap:10px}
+.nbtn{background:transparent;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8);padding:7px 16px;font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;border-radius:4px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:all .22s;display:inline-flex;align-items:center}
+.nbtn:hover{border-color:var(--amber);color:var(--amber)}
+.page{max-width:900px;margin:0 auto;padding:52px 24px 80px}
+.slbl{font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;display:block;font-weight:600}
+.ptitle{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:700;margin-bottom:10px}
+.psub{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:36px}
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-bottom:36px}
+.stat{background:var(--white);padding:20px;text-align:center}
+.stat-val{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--amber);line-height:1}
+.stat-lbl{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:500}
+/* REFERRAL LINK BOX */
+.link-box{background:var(--navy);border-radius:6px;padding:28px;margin-bottom:32px}
+.link-box h3{font-family:'Playfair Display',serif;font-size:20px;color:#fff;margin-bottom:6px}
+.link-box p{font-size:12px;color:rgba(255,255,255,.55);margin-bottom:18px}
+.link-input-wrap{display:flex;gap:8px}
+.link-input{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;padding:11px 14px;font-size:12px;font-family:'DM Sans',sans-serif;border-radius:4px;outline:none}
+.copy-btn{padding:11px 20px;background:var(--amber);color:var(--navy);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .22s;white-space:nowrap}
+.copy-btn:hover{background:#D97706}
+.share-row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.share-btn{padding:8px 16px;font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.7);border-radius:3px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s}
+.share-btn:hover{border-color:var(--amber);color:var(--amber)}
+/* HOW IT WORKS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-bottom:32px}
+.step{background:var(--white);padding:24px;position:relative}
+.step-num{font-family:'Playfair Display',serif;font-size:48px;color:rgba(245,158,11,.15);font-weight:700;line-height:1;margin-bottom:12px}
+.step h4{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin-bottom:6px;color:var(--ink)}
+.step p{font-size:12px;color:var(--muted);line-height:1.7}
+/* CONVERSIONS TABLE */
+.table-wrap{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.table-hd{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.table-hd h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:700}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{padding:10px 16px;text-align:left;font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--bg);border-bottom:1px solid var(--border)}
+td{padding:11px 16px;border-bottom:1px solid var(--border);color:var(--ink)}
+tr:last-child td{border-bottom:none}
+.badge{padding:3px 8px;border-radius:2px;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.badge-paid{background:#F0FDF4;color:var(--gr)}.badge-pending{background:#FFFBEB;color:var(--amber2)}
+/* LOCK */
+.lock{text-align:center;padding:80px 20px}
+.lock-ico{font-size:48px;opacity:.2;margin-bottom:14px}
+.lock-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;margin-bottom:8px}
+.lock-sub{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:24px}
+.btn-pri{padding:12px 28px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:var(--navy);color:#fff;border:none;border-radius:4px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-block;transition:all .22s}
+.btn-pri:hover{background:var(--amber);color:var(--navy)}
+@media(max-width:600px){.stats{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.link-input-wrap{flex-direction:column}.page{padding:28px 14px 60px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nlogo"><span class="nm">Trafinmarket</span><span class="ns">Premium Trading Education</span></a>
+  <div class="nav-r">
+    <a href="/dashboard" class="nbtn">Dashboard</a>
+    <a href="/" class="nbtn">Home</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- LOCK STATE -->
+  <div id="lockState" style="display:none">
+    <div class="lock">
+      <div class="lock-ico">🤝</div>
+      <div class="lock-title">Refer & Earn</div>
+      <div class="lock-sub">Sign in to get your unique referral link and start earning 10% commission on every purchase your friends make.</div>
+      <a href="/" class="btn-pri">Sign In to Get Your Link</a>
+    </div>
+  </div>
+
+  <!-- REFERRAL CONTENT -->
+  <div id="refContent" style="display:none">
+    <span class="slbl">Affiliate Program</span>
+    <h1 class="ptitle">Refer & <em style="font-style:italic;color:var(--amber)">Earn</em></h1>
+    <p class="psub">Share Trafinmarket with traders you know. Earn <strong>10% commission</strong> on every purchase they make. No limits on earnings.</p>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat"><div class="stat-val" id="statRefs">0</div><div class="stat-lbl">Total Referrals</div></div>
+      <div class="stat"><div class="stat-val" id="statEarned">₹0</div><div class="stat-lbl">Total Earned</div></div>
+      <div class="stat"><div class="stat-val" id="statPaid">₹0</div><div class="stat-lbl">Paid Out</div></div>
+      <div class="stat"><div class="stat-val" id="statPending" style="color:var(--gr)">₹0</div><div class="stat-lbl">Pending Payout</div></div>
+    </div>
+
+    <!-- LINK BOX -->
+    <div class="link-box">
+      <h3>Your Referral Link</h3>
+      <p>Share this link. Anyone who buys through it earns you 10% commission automatically.</p>
+      <div class="link-input-wrap">
+        <input class="link-input" id="refLink" readonly>
+        <button class="copy-btn" onclick="copyLink()">📋 Copy Link</button>
+      </div>
+      <div class="share-row">
+        <button class="share-btn" onclick="shareWA()">📱 Share on WhatsApp</button>
+        <button class="share-btn" onclick="shareTwitter()">🐦 Share on Twitter</button>
+        <button class="share-btn" onclick="shareTelegram()">✈️ Share on Telegram</button>
+      </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><h4>Share Your Link</h4><p>Copy your unique referral link and share it with traders — WhatsApp, Instagram, Twitter, anywhere.</p></div>
+      <div class="step"><div class="step-num">02</div><h4>They Buy a PDF</h4><p>When your friend visits through your link and purchases any PDF or subscription, it's tracked automatically.</p></div>
+      <div class="step"><div class="step-num">03</div><h4>You Earn 10%</h4><p>You earn 10% of their purchase value. We review and process payouts within 7 business days.</p></div>
+    </div>
+
+    <!-- CONVERSIONS TABLE -->
+    <div class="table-wrap">
+      <div class="table-hd">
+        <h3>Conversion History</h3>
+        <span style="font-size:11px;color:var(--muted)" id="convCount">0 conversions</span>
+      </div>
+      <div id="convTable">
+        <div style="text-align:center;padding:32px;color:var(--muted);font-size:13px">No conversions yet. Start sharing your link!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const tok = localStorage.getItem('tl_tok');
+const usr = (() => { try { return JSON.parse(localStorage.getItem('tl_usr')||'null'); } catch(e){ return null; } })();
+
+window.onload = async () => {
+  if (!tok || !usr) { document.getElementById('lockState').style.display='block'; return; }
+  document.getElementById('refContent').style.display='block';
+  try {
+    const r = await fetch('/api/referral/my', { headers: { 'Authorization': 'Bearer ' + tok } });
+    const data = await r.json();
+    document.getElementById('refLink').value = data.referralLink;
+    document.getElementById('statRefs').textContent   = data.stats.totalReferrals;
+    document.getElementById('statEarned').textContent = '₹' + (data.stats.totalEarned/100).toFixed(0);
+    document.getElementById('statPaid').textContent   = '₹' + (data.stats.totalPaid/100).toFixed(0);
+    document.getElementById('statPending').textContent= '₹' + (data.stats.pendingPayout/100).toFixed(0);
+    document.getElementById('convCount').textContent  = data.conversions.length + ' conversions';
+    if (data.conversions.length) {
+      document.getElementById('convTable').innerHTML = `
+        <table>
+          <tr><th>Referred Email</th><th>Order Amount</th><th>Commission</th><th>Status</th><th>Date</th></tr>
+          ${data.conversions.map(c=>`<tr>
+            <td>${c.referredEmail?.replace(/(.{3}).+(@.+)/,'$1***$2')}</td>
+            <td>₹${(c.orderAmount/100).toFixed(0)}</td>
+            <td>₹${(c.commissionAmt/100).toFixed(0)}</td>
+            <td><span class="badge ${c.isPaid?'badge-paid':'badge-pending'}">${c.isPaid?'Paid':'Pending'}</span></td>
+            <td>${new Date(c.convertedAt).toLocaleDateString('en-IN')}</td>
+          </tr>`).join('')}
+        </table>`;
+    }
+  } catch(e) { console.error(e); }
+};
+
+function copyLink() {
+  const link = document.getElementById('refLink').value;
+  navigator.clipboard.writeText(link).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => btn.textContent = '📋 Copy Link', 2000);
+  });
+}
+
+function shareWA() {
+  const link = document.getElementById('refLink').value;
+  window.open(`https://wa.me/?text=${encodeURIComponent('Check out Trafinmarket — honest trading education for Indian markets! '+link)}`, '_blank');
+}
+function shareTwitter() {
+  const link = document.getElementById('refLink').value;
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent('Honest trading education for Indian markets — Trafinmarket '+link)}`, '_blank');
+}
+function shareTelegram() {
+  const link = document.getElementById('refLink').value;
+  window.open(`https://t.me/share/url?url=${encodeURIComponent(link)}&text=${encodeURIComponent('Trafinmarket — Premium Trading Education')}`, '_blank');
+}
+</script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{});});}
+</script>
+</body>
+</html>

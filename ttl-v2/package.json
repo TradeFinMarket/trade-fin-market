@@ -1,0 +1,14 @@
+{
+  "name": "trafinmarket",
+  "version": "2.0.0",
+  "description": "Trafinmarket - Premium PDF Platform",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "install:backend": "cd backend && npm install",
+    "build": "cd backend && npm install"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

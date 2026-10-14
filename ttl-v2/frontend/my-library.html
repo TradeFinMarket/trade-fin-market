@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>My Library — Trafinmarket</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--g:#0B1C2E;--g2:#F59E0B;--cr:#0A0A0A;--m:#64748B;--b:rgba(29,78,216,.13);--b2:rgba(29,78,216,.28);--gr:#059669;--r:#E63946;--pu:#7C3AED;--or:#EA580C;--warn:#F59E0B}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#F8FAFC;color:var(--cr);font-family:Inter,sans-serif;font-weight:300;min-height:100vh}
+nav{background:#fff;border-bottom:1px solid var(--b);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(16,24,40,.05)}
+.nlogo{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--g);letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:8px}
+.nbtn{background:none;border:1px solid var(--b);color:var(--m);padding:7px 14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:7px;font-family:Inter,sans-serif;transition:all .22s;text-decoration:none;display:inline-flex;align-items:center}
+.nbtn:hover{border-color:var(--g);color:var(--g)}
+.nbtn-pri{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff!important;border:none}
+.nbtn-pri:hover{box-shadow:0 4px 12px rgba(29,78,216,.25)}
+.user-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;cursor:pointer;flex-shrink:0}
+.page{max-width:1100px;margin:0 auto;padding:36px 20px 80px}
+.page-hd{margin-bottom:28px}
+.slbl{font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:var(--g);margin-bottom:8px;display:block}
+.ptitle{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;margin-bottom:6px}
+.ptitle em{font-style:italic;color:var(--g)}
+.psub{font-size:13px;color:var(--m)}
+/* FILTER TABS */
+.tabs{display:flex;gap:6px;margin-bottom:24px;flex-wrap:wrap}
+.tab{padding:8px 18px;font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;border:1px solid var(--b);background:#fff;color:var(--m);cursor:pointer;border-radius:8px;transition:all .2s;font-family:Inter,sans-serif}
+.tab.act,.tab:hover{background:var(--g);color:#fff;border-color:var(--g)}
+/* STAT CARDS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:28px}
+.stat{background:#fff;border:1px solid var(--b);border-radius:11px;padding:16px 18px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.stat-lbl{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--m);margin-bottom:7px}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--g)}
+.stat-sub{font-size:10px;color:var(--m);margin-top:3px}
+/* PDF CARDS */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.pcard{background:#fff;border:1px solid var(--b);border-radius:14px;overflow:hidden;transition:all .3s;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.pcard:hover{border-color:var(--b2);box-shadow:0 5px 18px rgba(29,78,216,.1);transform:translateY(-3px)}
+.pc-cover{height:160px;background:linear-gradient(135deg,#EFF6FF,#F8FAFC);display:flex;align-items:center;justify-content:center;font-size:44px;position:relative;overflow:hidden}
+.pc-cover img{width:100%;height:100%;object-fit:cover}
+.pc-days{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.95);border:1px solid var(--b);border-radius:100px;padding:3px 9px;font-size:9px;font-weight:600;letter-spacing:.1em}
+.pc-days.expiring{color:var(--warn);border-color:rgba(245,158,11,.3)}
+.pc-days.expired{color:var(--r);border-color:rgba(230,57,70,.3)}
+.pc-days.active{color:var(--gr);border-color:rgba(5,150,105,.3)}
+.pc-body{padding:16px}
+.pc-cat{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--g);margin-bottom:5px}
+.pc-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;margin-bottom:5px;line-height:1.3}
+.pc-level{display:inline-block;font-size:9px;font-weight:500;padding:2px 8px;border-radius:100px;margin-bottom:10px;letter-spacing:.1em;text-transform:uppercase}
+.lv-basic{background:#F0FDF4;color:var(--gr)}.lv-inter{background:#EFF6FF;color:var(--g)}.lv-adv{background:#FFF7ED;color:var(--or)}.lv-super{background:#FEF2F2;color:var(--r)}.lv-pro{background:rgba(124,58,237,.06);color:var(--pu)}
+.pc-foot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid rgba(29,78,216,.06)}
+.pc-exp{font-size:10px;color:var(--m)}
+.read-btn{padding:8px 16px;font-size:9px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;border:none;border-radius:7px;cursor:pointer;font-family:Inter,sans-serif;transition:all .22s;text-decoration:none;display:inline-block}
+.read-btn:hover{box-shadow:0 4px 12px rgba(29,78,216,.25);transform:translateY(-1px)}
+.read-btn.expired{background:#F1F5F9;color:var(--m);box-shadow:none;transform:none;cursor:not-allowed}
+/* EMPTY & LOCK */
+.empty{text-align:center;padding:60px 20px}
+.empty-ico{font-size:48px;opacity:.2;margin-bottom:16px}
+.empty-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;margin-bottom:8px}
+.empty-sub{font-size:13px;color:var(--m);margin-bottom:20px;max-width:380px;margin-left:auto;margin-right:auto;line-height:1.8}
+.lock-screen{text-align:center;padding:80px 20px;max-width:480px;margin:0 auto}
+.lock-ico{font-size:52px;margin-bottom:16px;opacity:.2}
+.lock-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;margin-bottom:10px}
+.lock-sub{font-size:13px;color:var(--m);line-height:1.9;margin-bottom:24px}
+.btn{padding:12px 24px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;border:none;cursor:pointer;font-family:Inter,sans-serif;transition:all .25s;border-radius:8px;text-decoration:none;display:inline-block}
+.btn-pri{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff}
+.btn-pri:hover{box-shadow:0 4px 14px rgba(29,78,216,.28);transform:translateY(-1px)}
+.btn-out{background:#fff;border:1px solid var(--b);color:var(--m)}
+.btn-out:hover{border-color:var(--g);color:var(--g)}
+/* BROWSE SECTION */
+.browse-section{margin-top:40px;padding-top:32px;border-top:1px solid var(--b)}
+.browse-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;margin-bottom:6px}
+.browse-sub{font-size:13px;color:var(--m);margin-bottom:20px}
+@media(max-width:600px){.pgrid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.ptitle{font-size:28px}.page{padding:24px 14px 60px}}
+</style>
+  <!-- Google Analytics GA4 — replace G-XXXXXXXXXX with your Measurement ID -->
+  <!-- Get ID from: analytics.google.com → Admin → Data Streams → your stream -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+    // Track PDF purchase events
+    window.trackPurchase = function(productName, price) {
+      gtag('event', 'purchase', { item_name: productName, value: price/100, currency: 'INR' });
+    };
+    // Track PDF read events
+    window.trackRead = function(productName) {
+      gtag('event', 'read_pdf', { item_name: productName });
+    };
+  </script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#F59E0B">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Trafinmarket">
+</head>
+<body>
+<nav>
+  <a href="/" class="nlogo">Trafinmarket</a>
+  <div class="nav-links">
+    <a href="/dashboard" class="nbtn">Dashboard</a>
+    <a href="/journal" class="nbtn">Journal</a>
+    <a href="/" class="nbtn">Store</a>
+    <div class="user-av" id="userAv" onclick="window.location='/dashboard'">?</div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- NOT LOGGED IN -->
+  <div id="lockScreen" style="display:none">
+    <div class="lock-screen">
+      <div class="lock-ico">📚</div>
+      <div class="lock-title">Your Library</div>
+      <div class="lock-sub">Sign in to see all your purchased PDFs in one place. Track access expiry, read anytime, and manage your collection.</div>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <a href="/" class="btn btn-pri">Sign In</a>
+        <a href="/" class="btn btn-out">Browse PDFs</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGGED IN -->
+  <div id="libContent" style="display:none">
+    <div class="page-hd">
+      <span class="slbl">Your Collection</span>
+      <h1 class="ptitle">My <em>Library</em></h1>
+      <p class="psub" id="libSub">Loading your purchased PDFs...</p>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat"><div class="stat-lbl">PDFs Owned</div><div class="stat-val" id="statOwned">—</div><div class="stat-sub">Purchased total</div></div>
+      <div class="stat"><div class="stat-lbl">Currently Active</div><div class="stat-val" id="statActive">—</div><div class="stat-sub">Access not expired</div></div>
+      <div class="stat"><div class="stat-lbl">Expiring Soon</div><div class="stat-val" id="statExpiring" style="color:var(--warn)">—</div><div class="stat-sub">Within 7 days</div></div>
+      <div class="stat"><div class="stat-lbl">Expired</div><div class="stat-val" id="statExpired" style="color:var(--r)">—</div><div class="stat-sub">Need renewal</div></div>
+    </div>
+
+    <!-- FILTER TABS -->
+    <div class="tabs">
+      <button class="tab act" onclick="filterLib('all',this)">All PDFs</button>
+      <button class="tab" onclick="filterLib('active',this)">Active</button>
+      <button class="tab" onclick="filterLib('expiring',this)">Expiring Soon</button>
+      <button class="tab" onclick="filterLib('expired',this)">Expired</button>
+    </div>
+
+    <!-- MY PDFS GRID -->
+    <div class="pgrid" id="myPgrid">
+      <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--m)">Loading your library...</div>
+    </div>
+
+    <!-- BROWSE MORE -->
+    <div class="browse-section" id="browseMore" style="display:none">
+      <div class="browse-title">Discover More PDFs</div>
+      <div class="browse-sub">Expand your knowledge — browse all available guides in the library.</div>
+      <a href="/" class="btn btn-pri">Browse All PDFs</a>
+      <a href="/quiz" class="btn btn-out" style="margin-left:8px">Take the Quiz</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const tok = localStorage.getItem('tl_tok');
+const usr = (() => { try { return JSON.parse(localStorage.getItem('tl_usr')||'null'); } catch(e){ return null; } })();
+
+const CAT_ICON = {share:'🏭',forex:'💱',crypto:'₿',general:'🎯'};
+const CAT_NAME = {share:'Share Market',forex:'Forex',crypto:'Crypto',general:'General'};
+const LVL_CLS  = {Basic:'lv-basic',Intermediate:'lv-inter',Advance:'lv-adv','Super Advance':'lv-super','Pro Advance':'lv-pro'};
+
+let myProducts = [];
+
+window.onload = async () => {
+  if (!tok || !usr) {
+    document.getElementById('lockScreen').style.display = 'block';
+    return;
+  }
+  document.getElementById('userAv').textContent = (usr.name?.[0]||'?').toUpperCase();
+  document.getElementById('libContent').style.display = 'block';
+  await loadLibrary();
+};
+
+async function apiFetch(path) {
+  const r = await fetch(path, { headers: { 'Authorization': 'Bearer ' + tok } });
+  return r.json();
+}
+
+async function loadLibrary() {
+  try {
+    const [libRes, allRes] = await Promise.all([
+      apiFetch('/api/auth/my-library'),
+      apiFetch('/api/products/all-active')
+    ]);
+    const { productIds, expiryMap } = libRes;
+    const allProds = allRes.products || [];
+    myProducts = allProds
+      .filter(p => productIds.includes(p._id))
+      .map(p => ({ ...p, expiresAt: expiryMap[p._id] || null }));
+    const now = new Date();
+    const active   = myProducts.filter(p => p.expiresAt && new Date(p.expiresAt) > now);
+    const expiring = active.filter(p => {
+      const days = Math.ceil((new Date(p.expiresAt) - now) / 864e5);
+      return days <= 7;
+    });
+    const expired  = myProducts.filter(p => p.expiresAt && new Date(p.expiresAt) <= now);
+    document.getElementById('statOwned').textContent   = myProducts.length;
+    document.getElementById('statActive').textContent  = active.length;
+    document.getElementById('statExpiring').textContent = expiring.length;
+    document.getElementById('statExpired').textContent = expired.length;
+    document.getElementById('libSub').textContent = myProducts.length
+      ? `You have ${myProducts.length} PDF${myProducts.length>1?'s':''} — ${active.length} active`
+      : 'You haven\'t purchased any PDFs yet';
+    renderCards(myProducts);
+    if (myProducts.length < (allProds.length)) {
+      document.getElementById('browseMore').style.display = 'block';
+    }
+  } catch(e) {
+    document.getElementById('myPgrid').innerHTML = '<div style="color:var(--r);padding:30px;text-align:center">Failed to load library. Please refresh.</div>';
+  }
+}
+
+function filterLib(type, btn) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('act'));
+  btn.classList.add('act');
+  const now = new Date();
+  let filtered = myProducts;
+  if (type === 'active')   filtered = myProducts.filter(p => p.expiresAt && new Date(p.expiresAt) > now);
+  if (type === 'expiring') filtered = myProducts.filter(p => {
+    if (!p.expiresAt || new Date(p.expiresAt) <= now) return false;
+    return Math.ceil((new Date(p.expiresAt) - now) / 864e5) <= 7;
+  });
+  if (type === 'expired')  filtered = myProducts.filter(p => p.expiresAt && new Date(p.expiresAt) <= now);
+  renderCards(filtered);
+}
+
+function renderCards(prods) {
+  const now = new Date();
+  if (!prods.length) {
+    document.getElementById('myPgrid').innerHTML = `
+      <div style="grid-column:1/-1">
+        <div class="empty">
+          <div class="empty-ico">📚</div>
+          <div class="empty-title">No PDFs here</div>
+          <div class="empty-sub">Browse the store to find your perfect trading guide.</div>
+          <a href="/" class="btn btn-pri">Browse PDFs</a>
+        </div>
+      </div>`;
+    return;
+  }
+  document.getElementById('myPgrid').innerHTML = prods.map(p => {
+    const exp   = p.expiresAt ? new Date(p.expiresAt) : null;
+    const days  = exp ? Math.ceil((exp - now) / 864e5) : null;
+    const isExp = days !== null && days <= 0;
+    const isExpiring = days !== null && days > 0 && days <= 7;
+    const daysCls = isExp ? 'expired' : isExpiring ? 'expiring' : 'active';
+    const daysText = isExp ? 'Expired' : days !== null ? days + 'd left' : 'Active';
+    return `<div class="pcard">
+      <div class="pc-cover">
+        ${p.coverImage ? `<img src="${p.coverImage}">` : (CAT_ICON[p.category]||'📚')}
+        <div class="pc-days ${daysCls}">${daysText}</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-cat">${CAT_NAME[p.category]||p.category}</div>
+        <div class="pc-title">${p.title}</div>
+        <div class="pc-level ${LVL_CLS[p.level]||'lv-basic'}">${p.level}</div>
+        <div class="pc-foot">
+          <div class="pc-exp">${exp ? 'Expires ' + exp.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}) : ''}</div>
+          ${isExp
+            ? `<span class="read-btn expired">Expired</span>`
+            : `<a href="/reader?id=${p._id}" class="read-btn">Read →</a>`}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+</script>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('/sw.js').then(r=>console.log('SW registered')).catch(()=>{});
+  });
+}
+// PWA install prompt
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault(); deferredPrompt=e;
+  const btn=document.getElementById('pwaInstallBtn');
+  if(btn) btn.style.display='flex';
+});
+</script>
+</body>
+</html>

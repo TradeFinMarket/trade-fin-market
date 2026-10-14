@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Find Your Perfect Trading Guide — Quiz | Trafinmarket</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Answer 5 questions to get a personalised PDF recommendation matched to your capital, time, risk appetite and trading style.">
+  <meta name="keywords" content="which trading guide, trading quiz india, best trading pdf for beginners">
+  <meta name="author" content="Trafinmarket">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://trafinmarket.in/quiz">
+  <!-- Open Graph (WhatsApp, Facebook) -->
+  <meta property="og:title" content="Find Your Perfect Trading Guide — Quiz | Trafinmarket">
+  <meta property="og:description" content="Answer 5 questions to get a personalised PDF recommendation matched to your capital, time, risk appetite and trading style.">
+  <meta property="og:url" content="https://trafinmarket.in/quiz">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://trafinmarket.in/assets/og-image.png">
+  <meta property="og:site_name" content="Trafinmarket">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Find Your Perfect Trading Guide — Quiz | Trafinmarket">
+  <meta name="twitter:description" content="Answer 5 questions to get a personalised PDF recommendation matched to your capital, time, risk appetite and trading style.">
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--g:#0B1C2E;--g2:#F59E0B;--cr:#0A0A0A;--m:#64748B;--b:rgba(29,78,216,.13);--b2:rgba(29,78,216,.28);--gr:#059669;--r:#E63946;--pu:#7C3AED;--or:#EA580C}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fff;color:var(--cr);font-family:Inter,sans-serif;font-weight:300;min-height:100vh}
+nav{background:#fff;border-bottom:1px solid var(--b);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(16,24,40,.05)}
+.nlogo{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--g);letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+.nbtn{background:none;border:1px solid var(--b);color:var(--m);padding:7px 16px;font-size:10px;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;border-radius:7px;font-family:Inter,sans-serif;transition:all .22s;text-decoration:none;display:inline-flex;align-items:center}
+.nbtn:hover{border-color:var(--g);color:var(--g)}
+.nbtn-pri{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;border:none}
+.nbtn-pri:hover{box-shadow:0 4px 14px rgba(29,78,216,.28);color:#fff}
+.page{max-width:740px;margin:0 auto;padding:48px 20px 80px}
+.page-header{text-align:center;margin-bottom:40px}
+.slbl{font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:var(--g);margin-bottom:10px;display:block}
+.ptitle{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);font-weight:300;line-height:1.1;margin-bottom:12px}
+.ptitle em{font-style:italic;color:var(--g)}
+.psub{font-size:13px;color:var(--m);line-height:1.9;max-width:480px;margin:0 auto}
+/* PROGRESS */
+.prog-wrap{display:flex;gap:6px;margin-bottom:32px}
+.prog-step{flex:1;height:4px;background:rgba(29,78,216,.1);border-radius:2px;transition:background .4s}
+.prog-step.done{background:var(--g)}
+.prog-step.cur{background:var(--g2)}
+.prog-label{text-align:center;font-size:11px;color:var(--m);margin-bottom:20px}
+/* QUESTION CARD */
+.qcard{background:#fff;border:1px solid var(--b);border-radius:16px;padding:32px;box-shadow:0 1px 4px rgba(16,24,40,.06)}
+.qq{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;margin-bottom:6px;line-height:1.3}
+.qwhy{font-size:12px;color:var(--m);font-style:italic;margin-bottom:24px}
+.qopts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.qopt{background:#F8FAFC;border:1px solid var(--b);border-radius:12px;padding:16px;cursor:pointer;transition:all .22s;display:flex;align-items:flex-start;gap:12px;text-align:left}
+.qopt:hover{border-color:var(--b2);background:#EFF6FF;transform:translateY(-1px)}
+.qopt.sel{border-color:var(--g);background:#EFF6FF;box-shadow:0 0 0 3px rgba(29,78,216,.08)}
+.qico{font-size:24px;flex-shrink:0;margin-top:2px}
+.qlabel{font-size:13px;font-weight:500;color:var(--cr);margin-bottom:3px}
+.qsub{font-size:11px;color:var(--m)}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:24px}
+.qcount{font-size:11px;color:var(--m);letter-spacing:.1em}
+.btn{padding:11px 24px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;border:none;cursor:pointer;font-family:Inter,sans-serif;transition:all .25s;border-radius:8px}
+.btn-pri{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff}
+.btn-pri:hover{box-shadow:0 4px 14px rgba(29,78,216,.28);transform:translateY(-1px)}
+.btn-pri:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.btn-out{background:#fff;border:1px solid var(--b);color:var(--m)}
+.btn-out:hover{border-color:var(--g);color:var(--g)}
+/* RESULT */
+.result{display:none;animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.rcard{background:#fff;border:1px solid var(--b);border-radius:16px;padding:36px;text-align:center;box-shadow:0 1px 4px rgba(16,24,40,.06);margin-bottom:24px;position:relative;overflow:hidden}
+.rcard::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--g),var(--g2))}
+.rico{font-size:48px;margin-bottom:12px}
+.rtitle{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--g);margin-bottom:6px}
+.rsub{font-size:13px;color:var(--m);margin-bottom:20px}
+.rbadges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.rbadge{padding:5px 13px;border-radius:100px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.rb-blue{background:#EFF6FF;color:var(--g);border:1px solid rgba(29,78,216,.2)}
+.rb-green{background:#F0FDF4;color:var(--gr);border:1px solid rgba(5,150,105,.2)}
+.rb-pu{background:rgba(124,58,237,.06);color:var(--pu);border:1px solid rgba(124,58,237,.2)}
+.match-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.match-item{background:#F8FAFC;border-radius:10px;padding:14px;text-align:center}
+.match-pct{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300}
+.match-lbl{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--m);margin-top:2px}
+.warn-box{background:#FEF2F2;border:1px solid rgba(230,57,70,.18);border-radius:8px;padding:11px 14px;font-size:12px;color:var(--r);text-align:left;margin-bottom:8px;line-height:1.7}
+.tip-box{background:#F0FDF4;border:1px solid rgba(5,150,105,.18);border-radius:8px;padding:11px 14px;font-size:12px;color:var(--gr);text-align:left;margin-bottom:8px;line-height:1.7}
+/* RECOMMENDED PRODUCTS */
+.rec-section{margin-top:8px}
+.rec-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;margin-bottom:16px}
+.rec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.rec-card{background:#fff;border:1px solid var(--b);border-radius:12px;overflow:hidden;transition:all .28s;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.rec-card:hover{border-color:var(--b2);box-shadow:0 5px 18px rgba(29,78,216,.1);transform:translateY(-3px)}
+.rc-cover{height:130px;background:linear-gradient(135deg,#EFF6FF,#F8FAFC);display:flex;align-items:center;justify-content:center;font-size:40px;position:relative}
+.rc-badge{position:absolute;top:10px;right:10px;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:4px}
+.rc-body{padding:14px 16px}
+.rc-cat{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--g);margin-bottom:5px}
+.rc-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;margin-bottom:4px;line-height:1.3}
+.rc-desc{font-size:11px;color:var(--m);line-height:1.7;margin-bottom:10px}
+.rc-foot{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid rgba(29,78,216,.06)}
+.rc-price{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--g)}
+.rc-btn{padding:7px 15px;font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;border:none;border-radius:6px;cursor:pointer;font-family:Inter,sans-serif;transition:all .22s;text-decoration:none;display:inline-block}
+.rc-btn:hover{box-shadow:0 4px 12px rgba(29,78,216,.28)}
+.rc-btn-free{background:linear-gradient(135deg,var(--gr),#34D399)}
+.loading{text-align:center;padding:40px;color:var(--m);font-size:13px}
+@media(max-width:600px){.qopts{grid-template-columns:1fr}.match-grid{grid-template-columns:repeat(3,1fr)}.page{padding:28px 14px 60px}.rcard{padding:24px 16px}.qcard{padding:20px 16px}}
+</style>
+  <!-- Google Analytics GA4 — replace G-XXXXXXXXXX with your Measurement ID -->
+  <!-- Get ID from: analytics.google.com → Admin → Data Streams → your stream -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+    // Track PDF purchase events
+    window.trackPurchase = function(productName, price) {
+      gtag('event', 'purchase', { item_name: productName, value: price/100, currency: 'INR' });
+    };
+    // Track PDF read events
+    window.trackRead = function(productName) {
+      gtag('event', 'read_pdf', { item_name: productName });
+    };
+  </script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#F59E0B">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Trafinmarket">
+</head>
+<body>
+<nav>
+  <a href="/" class="nlogo">Trafinmarket</a>
+  <div style="display:flex;gap:8px">
+    <a href="/my-library" class="nbtn" id="navLib" style="display:none">My Library</a>
+    <a href="/dashboard" class="nbtn" id="navDash" style="display:none">Dashboard</a>
+    <a href="/" class="nbtn">Back to Home</a>
+  </div>
+</nav>
+
+<div class="page">
+  <!-- QUIZ -->
+  <div id="quizSection">
+    <div class="page-header">
+      <span class="slbl">Trading Profile Quiz</span>
+      <h1 class="ptitle">Find Your <em>Perfect Guide</em></h1>
+      <p class="psub">Answer 5 quick questions. Get a personalised PDF recommendation matched to your capital, time, risk appetite and interests.</p>
+    </div>
+    <div class="prog-wrap" id="progWrap"></div>
+    <div class="prog-label" id="progLabel">Question 1 of 5</div>
+    <div class="qcard">
+      <div class="qq" id="qq"></div>
+      <div class="qwhy" id="qwhy"></div>
+      <div class="qopts" id="qopts"></div>
+      <div class="qnav">
+        <span class="qcount" id="qcount"></span>
+        <button class="btn btn-pri" id="qnxt" onclick="qNext()" disabled>Continue →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div id="resultSection" class="result" style="display:none">
+    <div class="rcard">
+      <div class="rico" id="rico"></div>
+      <div class="rtitle" id="rtitle"></div>
+      <div class="rsub" id="rsub"></div>
+      <div class="rbadges" id="rbadges"></div>
+      <div class="match-grid" id="matchGrid"></div>
+      <div id="warnings"></div>
+      <div id="tips"></div>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px">
+        <button class="btn btn-pri" onclick="scrollToRec()">View Recommended PDFs</button>
+        <button class="btn btn-out" onclick="retake()">Retake Quiz</button>
+      </div>
+    </div>
+    <div class="rec-section" id="recSection">
+      <div class="rec-title">Recommended for You</div>
+      <div class="rec-grid" id="recGrid"><div class="loading">Loading recommendations...</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const tok = localStorage.getItem('tl_tok');
+const usr = (() => { try { return JSON.parse(localStorage.getItem('tl_usr')||'null'); } catch(e){ return null; } })();
+if(usr){ document.getElementById('navLib').style.display='inline-flex'; document.getElementById('navDash').style.display='inline-flex'; }
+
+const QS = [
+  {q:"What is your available trading capital?",w:"Capital determines which markets are accessible and realistic position sizes for you.",
+   opts:[{v:"u50k",i:"🌱",l:"Under ₹50,000",s:"Learning phase"},{v:"50k2l",i:"💼",l:"₹50K – ₹2 Lakhs",s:"Serious beginner"},{v:"2l10l",i:"🏢",l:"₹2L – ₹10 Lakhs",s:"Committed trader"},{v:"a10l",i:"🦁",l:"Above ₹10 Lakhs",s:"Professional capital"}]},
+  {q:"How much time can you dedicate daily?",w:"Choosing a style that fits your actual lifestyle is one of the most critical trading decisions.",
+   opts:[{v:"u1",i:"⏰",l:"Under 1 hour",s:"Analysis after work"},{v:"1t3",i:"🕒",l:"1–3 hours/day",s:"Part-time serious"},{v:"4t6",i:"📺",l:"4–6 hours/day",s:"Near full-time"},{v:"ft",i:"🔥",l:"Full-time",s:"Trading is my focus"}]},
+  {q:"What is your honest risk tolerance?",w:"Matching the right market to your risk profile prevents panic decisions that cause the biggest losses.",
+   opts:[{v:"con",i:"🛡️",l:"Conservative",s:"Capital preservation first"},{v:"mod",i:"⚖️",l:"Moderate",s:"Calculated risks"},{v:"agg",i:"⚡",l:"Aggressive",s:"High risk, fully understood"},{v:"ada",i:"🎯",l:"Adaptive",s:"Depends on setup"}]},
+  {q:"What genuinely excites you about markets?",w:"You only truly master what you are curious about. Pick based on genuine interest.",
+   opts:[{v:"share",i:"🏭",l:"Indian Companies & Economy",s:"BSE/NSE, Nifty, sectors"},{v:"forex",i:"🌍",l:"Global Currencies",s:"EUR/USD, DXY, central banks"},{v:"crypto",i:"₿",l:"Blockchain & Crypto",s:"Bitcoin, DeFi, Web3"},{v:"all",i:"🔄",l:"Open to Any Market",s:"Guide me based on answers"}]},
+  {q:"What trading style fits your personality?",w:"Choose based on your actual personality — not YouTube highlight reels.",
+   opts:[{v:"sc",i:"⚡",l:"Scalping",s:"Multiple trades/day"},{v:"sw",i:"🌊",l:"Swing Trading",s:"2–10 day holds"},{v:"lt",i:"⛰️",l:"Long-Term",s:"Weeks to months"},{v:"un",i:"🤔",l:"Not Sure Yet",s:"Recommend for me"}]}
+];
+
+let qa={}, qs=0;
+
+function init(){ renderQ(); }
+
+function renderQ(){
+  const q=QS[qs];
+  document.getElementById('qq').textContent=q.q;
+  document.getElementById('qwhy').textContent=q.w;
+  document.getElementById('qcount').textContent=`Question ${qs+1} of ${QS.length}`;
+  document.getElementById('progLabel').textContent=`Question ${qs+1} of ${QS.length}`;
+  document.getElementById('qopts').innerHTML=q.opts.map(o=>`
+    <div class="qopt" id="opt-${o.v}" onclick="selOpt('${o.v}')">
+      <div class="qico">${o.i}</div>
+      <div><div class="qlabel">${o.l}</div><div class="qsub">${o.s}</div></div>
+    </div>`).join('');
+  const pw=document.getElementById('progWrap');
+  pw.innerHTML='';
+  for(let i=0;i<QS.length;i++){
+    const d=document.createElement('div');
+    d.className='prog-step'+(i<qs?' done':i===qs?' cur':'');
+    pw.appendChild(d);
+  }
+  const nxt=document.getElementById('qnxt');
+  nxt.disabled=true;
+  const key=['capital','time','risk','interest','style'][qs];
+  if(qa[key]){
+    document.getElementById('opt-'+qa[key])?.classList.add('sel');
+    nxt.disabled=false;
+  }
+}
+
+function selOpt(v){
+  document.querySelectorAll('.qopt').forEach(o=>o.classList.remove('sel'));
+  document.getElementById('opt-'+v)?.classList.add('sel');
+  const key=['capital','time','risk','interest','style'][qs];
+  qa[key]=v;
+  document.getElementById('qnxt').disabled=false;
+}
+
+function qNext(){
+  const key=['capital','time','risk','interest','style'][qs];
+  if(!qa[key]) return;
+  qs++;
+  if(qs>=QS.length){ showResult(); return; }
+  renderQ();
+}
+
+function retake(){
+  qs=0;qa={};
+  document.getElementById('quizSection').style.display='block';
+  document.getElementById('resultSection').style.display='none';
+  renderQ();
+}
+
+async function showResult(){
+  document.getElementById('quizSection').style.display='none';
+  const rs=document.getElementById('resultSection');
+  rs.style.display='block';
+
+  const a=qa;
+  const s={share:30,forex:20,crypto:15};
+  if(a.interest==='share')s.share+=40;
+  else if(a.interest==='forex')s.forex+=40;
+  else if(a.interest==='crypto')s.crypto+=40;
+  else{s.share+=15;s.forex+=12;s.crypto+=8;}
+  if(a.capital==='u50k'){s.share+=15;s.crypto+=8;s.forex-=5;}
+  else if(a.capital==='50k2l'){s.share+=18;s.forex+=10;s.crypto+=8;}
+  else if(a.capital==='2l10l'){s.share+=12;s.forex+=20;}
+  else{s.forex+=22;s.share+=12;}
+  if(a.risk==='con'){s.share+=20;s.forex-=8;s.crypto-=20;}
+  else if(a.risk==='agg'){s.crypto+=15;s.forex+=10;}
+  Object.keys(s).forEach(k=>{if(s[k]<5)s[k]=5;});
+  const pm=Object.entries(s).sort((a,b)=>b[1]-a[1])[0][0];
+  const tot=Object.values(s).reduce((x,y)=>x+y,0);
+  const mt={share:Math.round(s.share/tot*100),forex:Math.round(s.forex/tot*100),crypto:Math.round(s.crypto/tot*100)};
+  const style=a.style==='sc'||a.time==='ft'?'Scalper':a.style==='lt'||a.time==='u1'?'Long-Term Trader':'Swing Trader';
+  const mi={share:{n:'Share Market',i:'🏭',c:'#1D4ED8'},forex:{n:'Forex',i:'💱',c:'#B45309'},crypto:{n:'Crypto',i:'₿',c:'#7C3AED'}};
+  const m=mi[pm];
+
+  document.getElementById('rico').textContent=m.i;
+  document.getElementById('rtitle').textContent='Your Market: '+m.n;
+  document.getElementById('rsub').textContent='Based on your capital, risk, time and interests — here is your match.';
+  document.getElementById('rbadges').innerHTML=`
+    <span class="rbadge rb-blue">${m.n}</span>
+    <span class="rbadge rb-green">${style}</span>
+    <span class="rbadge rb-pu">Start: Basic Level</span>`;
+  document.getElementById('matchGrid').innerHTML=Object.entries(mt).map(([k,v])=>`
+    <div class="match-item">
+      <div class="match-pct" style="color:${k===pm?m.c:'var(--m)'}">${v}%</div>
+      <div class="match-lbl">${mi[k].n}</div>
+    </div>`).join('');
+
+  const warns=[];
+  if(a.capital==='u50k'&&pm==='forex')warns.push('Under ₹50K is thin for Forex. Build capital in Share Market first.');
+  if(a.capital==='u50k'&&pm==='crypto')warns.push('30% tax + 1% TDS + low capital = profits disappear fast. Paper trade first.');
+  if(a.style==='sc'&&a.time==='u1')warns.push('Scalping needs 4–8 hrs/day. Under 1 hr + scalping is incompatible.');
+  document.getElementById('warnings').innerHTML=warns.map(w=>`<div class="warn-box">⚠️ ${w}</div>`).join('');
+  document.getElementById('tips').innerHTML=['Start with Basic level — foundations before strategies.','Complete each PDF before moving to the next level.','Paper trade for 3 months before risking real capital.']
+    .map(t=>`<div class="tip-box">✓ ${t}</div>`).join('');
+
+  // Load recommended products
+  try {
+    const res = await fetch('/api/products/all-active?category='+pm);
+    const data = await res.json();
+    let prods = data.products || [];
+    if(!prods.length){ const res2=await fetch('/api/products/all-active'); const d2=await res2.json(); prods=d2.products||[]; }
+    const CAT={share:'Share Market',forex:'Forex',crypto:'Crypto',general:'General'};
+    const LVL={Basic:'Basic',Intermediate:'Intermediate',Advance:'Advance','Super Advance':'Super Advance','Pro Advance':'Pro Advance'};
+    document.getElementById('recGrid').innerHTML = prods.length ? prods.map(p=>`
+      <div class="rec-card">
+        <div class="rc-cover">${p.coverImage?`<img src="${p.coverImage}" style="width:100%;height:100%;object-fit:cover">`:['🏭','💱','₿','🎯'][['share','forex','crypto','general'].indexOf(p.category)]||'📚'}
+          ${p.badge?`<div class="rc-badge">${p.badge}</div>`:''}</div>
+        <div class="rc-body">
+          <div class="rc-cat">${CAT[p.category]||p.category} · ${p.level}</div>
+          <div class="rc-title">${p.title}</div>
+          <div class="rc-desc">${p.shortDesc||p.description?.substring(0,80)+'...'||''}</div>
+          <div class="rc-foot">
+            <div class="rc-price">${p.isFree?'<span style="color:var(--gr)">FREE</span>':'₹'+(p.priceINR/100).toFixed(0)}</div>
+            <a href="/" class="rc-btn ${p.isFree?'rc-btn-free':''}">${p.isFree?'Get Free':'Buy Now'}</a>
+          </div>
+        </div>
+      </div>`).join('') : '<div style="color:var(--m);text-align:center;padding:30px">No PDFs available yet in this category.</div>';
+  } catch(e) {
+    document.getElementById('recGrid').innerHTML='<div style="color:var(--m);padding:20px">Could not load recommendations. <a href="/" style="color:var(--g)">Browse library</a></div>';
+  }
+}
+
+function scrollToRec(){ document.getElementById('recSection').scrollIntoView({behavior:'smooth'}); }
+window.onload=()=>init();
+</script>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('/sw.js').then(r=>console.log('SW registered')).catch(()=>{});
+  });
+}
+// PWA install prompt
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault(); deferredPrompt=e;
+  const btn=document.getElementById('pwaInstallBtn');
+  if(btn) btn.style.display='flex';
+});
+</script>
+</body>
+</html>

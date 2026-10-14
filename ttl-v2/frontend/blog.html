@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Trading Blog — Market Insights for Indian Traders | Trafinmarket</title>
+<meta name="description" content="Honest trading insights, market analysis and education for Indian traders. Share Market, Forex and Crypto articles.">
+<meta property="og:title" content="Trading Blog | Trafinmarket">
+<meta property="og:description" content="Honest trading insights for Indian markets.">
+<link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#F59E0B">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1C2E;--amber:#F59E0B;--bg:#F8F7F4;--bg2:#EFECE6;--white:#fff;--ink:#1A2332;--muted:#5A6B7A;--border:#DDD9D0;--gr:#059669;--r:#DC2626}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300}
+nav{background:var(--navy);border-bottom:2px solid var(--amber);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
+.nlogo{text-decoration:none;display:flex;flex-direction:column;line-height:1}
+.nlogo .nm{font-family:'Playfair Display',serif;font-size:17px;color:#fff;font-weight:700}
+.nlogo .ns{font-size:7px;letter-spacing:.4em;text-transform:uppercase;color:var(--amber)}
+.nav-r{display:flex;gap:10px}
+.nbtn{background:transparent;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8);padding:7px 16px;font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;border-radius:4px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:all .22s;display:inline-flex;align-items:center}
+.nbtn:hover{border-color:var(--amber);color:var(--amber)}
+.page{max-width:1100px;margin:0 auto;padding:52px 24px 80px}
+.page-hd{margin-bottom:40px}
+.slbl{font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;display:block;font-weight:600}
+.ptitle{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:700;margin-bottom:8px}
+.psub{font-size:13px;color:var(--muted);line-height:1.8}
+/* CATEGORY TABS */
+.tabs{display:flex;gap:6px;margin-bottom:32px;flex-wrap:wrap}
+.tab{padding:7px 16px;font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;border-radius:3px;transition:all .2s;font-family:'DM Sans',sans-serif}
+.tab.act,.tab:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* BLOG GRID */
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1px;background:var(--border);margin-bottom:40px}
+.bcard{background:var(--white);display:flex;flex-direction:column;transition:all .25s;text-decoration:none;color:inherit}
+.bcard:hover{background:var(--bg);transform:translateY(-2px);box-shadow:0 6px 20px rgba(11,28,46,.08)}
+.bc-cover{height:180px;background:linear-gradient(135deg,var(--navy),#1A3A5C);display:flex;align-items:center;justify-content:center;font-size:48px;overflow:hidden;position:relative}
+.bc-cover img{width:100%;height:100%;object-fit:cover}
+.bc-cat{position:absolute;bottom:10px;left:10px;background:var(--amber);color:var(--navy);font-size:8px;font-weight:700;padding:3px 8px;letter-spacing:.15em;text-transform:uppercase;border-radius:2px}
+.bc-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.bc-meta{display:flex;gap:12px;font-size:10px;color:var(--muted);margin-bottom:10px;letter-spacing:.08em}
+.bc-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;margin-bottom:8px;line-height:1.3;color:var(--ink)}
+.bc-excerpt{font-size:12px;color:var(--muted);line-height:1.8;flex:1;margin-bottom:14px}
+.bc-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border)}
+.bc-author{font-size:10px;color:var(--muted);font-weight:500}
+.bc-read{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
+/* FEATURED */
+.featured{background:var(--navy);padding:32px;margin-bottom:1px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;text-decoration:none;color:inherit;transition:opacity .22s}
+.featured:hover{opacity:.92}
+.feat-label{font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--amber);margin-bottom:10px;font-weight:700}
+.feat-title{font-family:'Playfair Display',serif;font-size:28px;color:#fff;font-weight:700;margin-bottom:10px;line-height:1.2}
+.feat-excerpt{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:16px}
+.feat-meta{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.1em}
+.feat-img{height:220px;background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(11,28,46,.5));border:1px solid rgba(255,255,255,.1);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:64px;overflow:hidden}
+.feat-img img{width:100%;height:100%;object-fit:cover}
+/* EMPTY */
+.empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.empty-ico{font-size:44px;opacity:.2;margin-bottom:14px}
+/* PAGINATION */
+.pagination{display:flex;gap:6px;justify-content:center}
+.pg-btn{padding:8px 16px;font-size:10px;font-weight:600;border:1px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;border-radius:3px;font-family:'DM Sans',sans-serif;transition:all .2s}
+.pg-btn.act,.pg-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pg-btn:disabled{opacity:.4;cursor:not-allowed}
+/* FOOTER */
+footer{background:var(--navy);padding:32px;text-align:center;border-top:2px solid var(--amber)}
+footer p{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.1em}
+@media(max-width:600px){.bgrid{grid-template-columns:1fr}.featured{grid-template-columns:1fr}.feat-img{display:none}.page{padding:28px 14px 60px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nlogo"><span class="nm">Trafinmarket</span><span class="ns">Premium Trading Education</span></a>
+  <div class="nav-r">
+    <a href="/library" class="nbtn">Library</a>
+    <a href="/journal" class="nbtn">Journal</a>
+    <a href="/" class="nbtn">Home</a>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="page-hd">
+    <span class="slbl">Market Insights</span>
+    <h1 class="ptitle">Trading <em style="font-style:italic;color:var(--amber)">Blog</em></h1>
+    <p class="psub">Honest market analysis and education for Indian traders. No hype, no shortcuts.</p>
+  </div>
+
+  <div id="featuredWrap"></div>
+
+  <div class="tabs">
+    <button class="tab act" onclick="setCat('all',this)">All</button>
+    <button class="tab" onclick="setCat('share-market',this)">Share Market</button>
+    <button class="tab" onclick="setCat('forex',this)">Forex</button>
+    <button class="tab" onclick="setCat('crypto',this)">Crypto</button>
+    <button class="tab" onclick="setCat('psychology',this)">Psychology</button>
+  </div>
+
+  <div class="bgrid" id="postGrid">
+    <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Loading articles...</div>
+  </div>
+
+  <div class="pagination" id="pagination"></div>
+</div>
+
+<footer><p>&copy; 2026 Trafinmarket — Premium Trading Education</p></footer>
+
+<script>
+let curCat='all', curPage=1;
+const CAT_ICONS={share:'📈','share-market':'📈',forex:'💱',crypto:'₿',psychology:'🧠',general:'📝'};
+const CAT_LABELS={'share-market':'Share Market',forex:'Forex',crypto:'Crypto',psychology:'Psychology',general:'General'};
+
+window.onload=()=>loadPosts();
+
+function setCat(cat,btn){
+  curCat=cat;curPage=1;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('act'));
+  btn.classList.add('act');
+  loadPosts();
+}
+
+async function loadPosts(){
+  const g=document.getElementById('postGrid');
+  g.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Loading...</div>';
+  try{
+    const url=`/api/blog?limit=9&page=${curPage}${curCat!=='all'?'&category='+curCat:''}`;
+    const r=await fetch(url);
+    const{posts,total,pages}=await r.json();
+
+    // Featured post (first post on first page)
+    const fw=document.getElementById('featuredWrap');
+    if(curPage===1&&posts.length>0&&curCat==='all'){
+      const fp=posts[0];
+      fw.innerHTML=`<a class="featured" href="/blog/${fp.slug}">
+        <div>
+          <div class="feat-label">&#9670; Featured Article</div>
+          <div class="feat-title">${fp.title}</div>
+          <div class="feat-excerpt">${fp.excerpt}</div>
+          <div class="feat-meta">${fp.author} &nbsp;·&nbsp; ${fp.readTime} min read &nbsp;·&nbsp; ${new Date(fp.publishedAt).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}</div>
+        </div>
+        <div class="feat-img">${fp.coverImage?`<img src="${fp.coverImage}">`:(CAT_ICONS[fp.category]||'📝')}</div>
+      </a>`;
+      posts.shift(); // remove from grid
+    } else { fw.innerHTML=''; }
+
+    if(!posts.length&&!document.querySelector('.featured')){
+      g.innerHTML=`<div style="grid-column:1/-1"><div class="empty"><div class="empty-ico">📝</div><p>No articles yet. Check back soon!</p></div></div>`;
+      return;
+    }
+
+    g.innerHTML=posts.map(p=>`
+      <a class="bcard" href="/blog/${p.slug}">
+        <div class="bc-cover">
+          ${p.coverImage?`<img src="${p.coverImage}">`:(CAT_ICONS[p.category]||'📝')}
+          <div class="bc-cat">${CAT_LABELS[p.category]||p.category}</div>
+        </div>
+        <div class="bc-body">
+          <div class="bc-meta">
+            <span>${new Date(p.publishedAt).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</span>
+            <span>${p.readTime} min read</span>
+            <span>${p.views||0} views</span>
+          </div>
+          <div class="bc-title">${p.title}</div>
+          <div class="bc-excerpt">${p.excerpt}</div>
+          <div class="bc-footer">
+            <span class="bc-author">By ${p.author}</span>
+            <span class="bc-read">Read &rarr;</span>
+          </div>
+        </div>
+      </a>`).join('');
+
+    // Pagination
+    const pg=document.getElementById('pagination');
+    if(pages>1){
+      let html=`<button class="pg-btn" onclick="goPage(${curPage-1})" ${curPage===1?'disabled':''}>&#8592; Prev</button>`;
+      for(let i=1;i<=pages;i++) html+=`<button class="pg-btn ${i===curPage?'act':''}" onclick="goPage(${i})">${i}</button>`;
+      html+=`<button class="pg-btn" onclick="goPage(${curPage+1})" ${curPage===pages?'disabled':''}>Next &#8594;</button>`;
+      pg.innerHTML=html;
+    } else { pg.innerHTML=''; }
+  }catch(e){
+    g.innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--r)">Failed to load articles. <button onclick="loadPosts()" style="color:var(--amber);background:none;border:none;cursor:pointer;font-family:inherit">Retry</button></div>`;
+  }
+}
+
+function goPage(p){curPage=p;loadPosts();window.scrollTo(0,0);}
+</script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{});});}
+</script>
+</body>
+</html>

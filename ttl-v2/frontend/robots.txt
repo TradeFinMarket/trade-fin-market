@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /reader
+Disallow: /dashboard
+Disallow: /my-library
+
+Sitemap: https://trafinmarket.in/sitemap.xml
